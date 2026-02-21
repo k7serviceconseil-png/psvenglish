@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PSV – Professional Sales Validation (CA)</title>
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      background:#f4f6fb;
+      margin:0;
+      padding:40px;
+    }
+
+    .container{
+      max-width:900px;
+      margin:auto;
+      background:white;
+      padding:40px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1{
+      color:#0a2a66;
+      margin-bottom:10px;
+    }
+
+    h2{
+      color:#0a2a66;
+      margin-top:30px;
+    }
+
+    .question{
+      background:#f8f9fd;
+      padding:15px;
+      border-radius:8px;
+      margin-bottom:20px;
+    }
+
+    .question p{
+      font-weight:bold;
+    }
+
+    label{
+      display:block;
+      margin:6px 0;
+    }
+
+    input[type="text"], input[type="email"], select{
+      width:100%;
+      max-width:520px;
+      padding:10px;
+      border:1px solid #d7dbea;
+      border-radius:8px;
+      margin-top:6px;
+      background:#fff;
+    }
+
+    button{
+      background:#0a2a66;
+      color:white;
+      border:none;
+      padding:12px 25px;
+      border-radius:6px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#153a8a;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <h1>PSV – Professional Sales Validation</h1>
+    <p>Suggested duration: 60–75 minutes.</p>
+
+    <!-- IMPORTANT: Ceci suffit pour activer Netlify Forms -->
+    <form name="psv" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="psv" />
+
+      <!-- CONTACT INFO -->
+      <h2>Candidate Information</h2>
+
+      <label>
+        Full Name:
+        <input type="text" name="fullname" required />
+      </label>
+
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+
+      <label>
+        Company:
+        <input type="text" name="company" />
+      </label>
+
+      <hr />
+
+      <h2>Questions</h2>
+
+      <div class="question">
+        <p>1. During a first prospecting call, what is the best approach?</p>
+        <label><input type="checkbox" name="q1" value="A" /> A. Present your product immediately.</label>
+        <label><input type="checkbox" name="q1" value="B" /> B. Ask questions to understand needs.</label>
+        <label><input type="checkbox" name="q1" value="C" /> C. Directly ask to buy.</label>
+        <label><input type="checkbox" name="q1" value="D" /> D. Build trust first.</label>
+        <label><input type="checkbox" name="q1" value="E" /> E. None of the above.</label>
+      </div>
+
+      <div class="question">
+        <p>2. What demonstrates active listening?</p>
+        <label><input type="checkbox" name="q2" value="A" /> A. Paraphrasing.</label>
+        <label><input type="checkbox" name="q2" value="B" /> B. Asking open-ended questions.</label>
+        <label><input type="checkbox" name="q2" value="C" /> C. Talking more than the client.</label>
+        <label><input type="checkbox" name="q2" value="D" /> D. Ignoring details.</label>
+        <label><input type="checkbox" name="q2" value="E" /> E. All answers are correct.</label>
+      </div>
+
+      <hr />
+
+      <h2>Self-Assessment (13 Competencies)</h2>
+
+      <label>
+        1. Initial contact ability
+        <select name="self1" required>
+          <option value="">Select</option>
+          <option>Very Low</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>Good</option>
+          <option>Very Good</option>
+          <option>Superior</option>
+        </select>
+      </label>
+
+      <label>
+        2. Needs discovery
+        <select name="self2" required>
+          <option value="">Select</option>
+          <option>Very Low</option>
+          <option>Low</option>
+          <option>Medium</option>
+          <option>Good</option>
+          <option>Very Good</option>
+          <option>Superior</option>
+        </select>
+      </label>
+
+      <br /><br />
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</body>
+</html>
