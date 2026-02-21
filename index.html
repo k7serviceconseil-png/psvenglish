@@ -2,162 +2,2386 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PSV – Professional Sales Validation (CA)</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PSV – Professional Sales Validation (CA) | English Questionnaire</title>
   <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f4f6fb;
-      margin:0;
-      padding:40px;
+    :root {
+      --k7: #0a2a66;
+      --accent: #1E4E9B;
+      --bg: #f4f6fb;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --line: #e6e9f2;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+      --shadow2: 0 6px 18px rgba(15, 23, 42, .06);
+      --radius: 16px;
     }
 
-    .container{
-      max-width:900px;
-      margin:auto;
-      background:white;
-      padding:40px;
-      border-radius:12px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(30,78,155,.12), transparent 60%),
+                  radial-gradient(1200px 600px at 80% -10%, rgba(10,42,102,.10), transparent 60%),
+                  var(--bg);
     }
 
-    h1{
-      color:#0a2a66;
-      margin-bottom:10px;
+    a { color: var(--accent); }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 22px 18px 90px;
     }
 
-    h2{
-      color:#0a2a66;
-      margin-top:30px;
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(244, 246, 251, .86);
+      border-bottom: 1px solid rgba(230, 233, 242, .85);
     }
 
-    .question{
-      background:#f8f9fd;
-      padding:15px;
-      border-radius:8px;
-      margin-bottom:20px;
+    .topbar-inner {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
     }
 
-    .question p{
-      font-weight:bold;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 240px;
     }
 
-    label{
-      display:block;
-      margin:6px 0;
+    .brand img {
+      width: 220px;
+      max-width: 42vw;
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 4px 10px rgba(15,23,42,.08));
     }
 
-    input[type="text"], input[type="email"], select{
-      width:100%;
-      max-width:520px;
-      padding:10px;
-      border:1px solid #d7dbea;
-      border-radius:8px;
-      margin-top:6px;
-      background:#fff;
+    .timer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.9);
+      border-radius: 999px;
+      box-shadow: var(--shadow2);
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    button{
-      background:#0a2a66;
-      color:white;
-      border:none;
-      padding:12px 25px;
-      border-radius:6px;
-      font-weight:bold;
-      cursor:pointer;
+    .time {
+      font-variant-numeric: tabular-nums;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--k7);
+      letter-spacing: .02em;
+      min-width: 86px;
+      text-align: right;
     }
 
-    button:hover{
-      background:#153a8a;
+    .timer small {
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      transition: transform .08s ease, filter .15s ease;
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--k7), var(--accent));
+      color: #fff;
+      box-shadow: 0 10px 22px rgba(10,42,102,.22);
+    }
+    .btn-ghost {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--k7);
+    }
+    .btn[disabled] {
+      opacity: .55;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    .hero {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .title {
+      font-size: clamp(1.5rem, 2.6vw, 2.15rem);
+      font-weight: 950;
+      letter-spacing: -.02em;
+      color: var(--k7);
+      margin: 0;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px 18px;
+    }
+
+    .card h2 {
+      margin: 0 0 10px;
+      font-size: 1.12rem;
+      letter-spacing: -.01em;
+      color: var(--k7);
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .field label {
+      display: block;
+      font-size: .92rem;
+      font-weight: 800;
+      color: #23324d;
+      margin-bottom: 6px;
+    }
+
+    .field input, .field select {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .field input:focus, .field select:focus {
+      border-color: rgba(30,78,155,.55);
+      box-shadow: 0 0 0 4px rgba(30,78,155,.12);
+    }
+
+    .note {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: .95rem;
+      line-height: 1.5;
+    }
+
+    .rules {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: #23324d;
+      line-height: 1.55;
+      font-weight: 600;
+    }
+    .rules li { margin: 6px 0; }
+
+    .question-card {
+      padding: 16px 16px;
+      box-shadow: var(--shadow2);
+    }
+    .question-card:hover {
+      border-color: rgba(30,78,155,.35);
+    }
+
+    .q-head {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+    .q-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+      color: #fff;
+      background: linear-gradient(135deg, var(--k7), var(--accent));
+      box-shadow: 0 10px 20px rgba(10,42,102,.22);
+    }
+    .q-text {
+      font-weight: 850;
+      line-height: 1.35;
+      color: #13203b;
+    }
+
+    .answers {
+      display: grid;
+      gap: 10px;
+    }
+
+    .answer {
+      display: grid;
+      grid-template-columns: 26px 26px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 10px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: #fff;
+      transition: border-color .15s ease, transform .08s ease, box-shadow .15s ease;
+      cursor: pointer;
+      user-select: none;
+    }
+    .answer:hover {
+      border-color: rgba(30,78,155,.35);
+      box-shadow: 0 10px 18px rgba(15,23,42,.06);
+    }
+    .answer input {
+      transform: scale(1.05);
+      margin-top: 2px;
+      cursor: pointer;
+    }
+    .letter {
+      font-weight: 950;
+      color: var(--k7);
+    }
+    .answer-text {
+      color: #23324d;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(30,78,155,.08);
+      color: var(--k7);
+      font-weight: 800;
+      border: 1px solid rgba(30,78,155,.15);
+    }
+
+    .sa-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .sa-row {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 12px;
+      align-items: center;
+      padding: 12px 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .sa-label {
+      font-weight: 750;
+      color: #23324d;
+      line-height: 1.35;
+    }
+    .sa-select select {
+      width: 100%;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .status {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(16,185,129,.25);
+      background: rgba(16,185,129,.08);
+      color: #065f46;
+      font-weight: 800;
+    }
+
+    .error {
+      display: none;
+      margin-top: 12px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(239,68,68,.25);
+      background: rgba(239,68,68,.08);
+      color: #7f1d1d;
+      font-weight: 800;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-weight: 650;
+      font-size: .92rem;
+      text-align: center;
+    }
+
+    @media (max-width: 740px) {
+      .meta { grid-template-columns: 1fr; }
+      .sa-row { grid-template-columns: 1fr; }
+      .timer { justify-content: center; }
+      .brand { min-width: 0; }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-
-    <h1>PSV – Professional Sales Validation</h1>
-    <p>Suggested duration: 60–75 minutes.</p>
-
-    <!-- IMPORTANT: Ceci suffit pour activer Netlify Forms -->
-    <form name="psv" method="POST" data-netlify="true">
-      <input type="hidden" name="form-name" value="psv" />
-
-      <!-- CONTACT INFO -->
-      <h2>Candidate Information</h2>
-
-      <label>
-        Full Name:
-        <input type="text" name="fullname" required />
-      </label>
-
-      <label>
-        Email:
-        <input type="email" name="email" required />
-      </label>
-
-      <label>
-        Company:
-        <input type="text" name="company" />
-      </label>
-
-      <hr />
-
-      <h2>Questions</h2>
-
-      <div class="question">
-        <p>1. During a first prospecting call, what is the best approach?</p>
-        <label><input type="checkbox" name="q1" value="A" /> A. Present your product immediately.</label>
-        <label><input type="checkbox" name="q1" value="B" /> B. Ask questions to understand needs.</label>
-        <label><input type="checkbox" name="q1" value="C" /> C. Directly ask to buy.</label>
-        <label><input type="checkbox" name="q1" value="D" /> D. Build trust first.</label>
-        <label><input type="checkbox" name="q1" value="E" /> E. None of the above.</label>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand" aria-label="K7 Service-Conseil">
+        <img src="Logo K7 new_500x146.png" alt="K7 Service-Conseil logo" />
       </div>
 
-      <div class="question">
-        <p>2. What demonstrates active listening?</p>
-        <label><input type="checkbox" name="q2" value="A" /> A. Paraphrasing.</label>
-        <label><input type="checkbox" name="q2" value="B" /> B. Asking open-ended questions.</label>
-        <label><input type="checkbox" name="q2" value="C" /> C. Talking more than the client.</label>
-        <label><input type="checkbox" name="q2" value="D" /> D. Ignoring details.</label>
-        <label><input type="checkbox" name="q2" value="E" /> E. All answers are correct.</label>
+      <div class="timer" aria-label="Timer">
+        <small>Time left</small>
+        <div class="time" id="timer">75:00</div>
+        <button class="btn btn-primary" id="timer-btn" type="button" onclick="toggleTimer()">Start</button>
+        <button class="btn btn-ghost" id="reset-btn" type="button" onclick="resetTimer()">Reset</button>
       </div>
-
-      <hr />
-
-      <h2>Self-Assessment (13 Competencies)</h2>
-
-      <label>
-        1. Initial contact ability
-        <select name="self1" required>
-          <option value="">Select</option>
-          <option>Very Low</option>
-          <option>Low</option>
-          <option>Medium</option>
-          <option>Good</option>
-          <option>Very Good</option>
-          <option>Superior</option>
-        </select>
-      </label>
-
-      <label>
-        2. Needs discovery
-        <select name="self2" required>
-          <option value="">Select</option>
-          <option>Very Low</option>
-          <option>Low</option>
-          <option>Medium</option>
-          <option>Good</option>
-          <option>Very Good</option>
-          <option>Superior</option>
-        </select>
-      </label>
-
-      <br /><br />
-      <button type="submit">Submit</button>
-    </form>
-
+    </div>
   </div>
+
+  <div class="wrap">
+    <section class="hero">
+      <h1 class="title">PSV – Professional Sales Validation (CA)</h1>
+      <p class="subtitle">English questionnaire • 50 multiple-choice questions + self-assessment (13 competencies).</p>
+    </section>
+
+    <form id="psv-form" name="psv-ca-en" method="POST" data-netlify="true" netlify>
+      <input type="hidden" name="form-name" value="psv-ca-en" />
+
+      <div class="grid">
+        <div class="card">
+          <div class="section-head">
+            <h2>Instructions</h2>
+            <span class="pill">Suggested duration: 75 minutes</span>
+          </div>
+          <p class="note">
+            This test is designed to be completed in a single session, without interruption.
+            Select <strong>all</strong> answers you believe are correct.
+          </p>
+          <ol class="rules">
+            <li>The test consists of 50 multiple-choice questions.</li>
+            <li>Each question offers 5 answer choices (A to E).</li>
+            <li>In some questions, more than one answer may be correct.</li>
+            <li>When “All of these answers are correct” (E) is relevant, it is considered correct.</li>
+            <li>When “None of the above” (E) is relevant, it is considered correct.</li>
+            <li>Read each question carefully before answering.</li>
+          </ol>
+          <p class="note" style="margin-top:10px;">
+            Objective: assess sales skills across key areas (prospecting, needs discovery, objection handling, closing, follow-up, etc.).
+          </p>
+        </div>
+
+        <div class="card">
+          <h2>Contact details</h2>
+          <div class="meta">
+            <div class="field">
+              <label for="name">Last name</label>
+              <input id="name" type="text" name="LastName" autocomplete="family-name" required>
+            </div>
+            <div class="field">
+              <label for="firstname">First name</label>
+              <input id="firstname" type="text" name="FirstName" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" name="Email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="company">Company (optional)</label>
+              <input id="company" type="text" name="Company" autocomplete="organization">
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h2>Questions (1–50)</h2>
+            <span class="pill">Multiple answers allowed</span>
+          </div>
+          <p class="note">Tip: click anywhere on an answer row to select/deselect.</p>
+        </div>
+
+        
+        <div class="card question-card" id="q1">
+          <div class="q-head">
+            <div class="q-num">1</div>
+            <div class="q-text">During an initial prospecting call, what is the best approach?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q1" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Immediately present your product in detail.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q1" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Ask questions to understand the prospect’s needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q1" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Directly ask if they want to buy.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q1" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Build trust before talking about sales.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q1" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q2">
+          <div class="q-head">
+            <div class="q-num">2</div>
+            <div class="q-text">Which actions demonstrate good active listening in sales?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q2" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Paraphrasing the client’s statements.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q2" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Asking open-ended questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q2" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Talking more than the client to show expertise.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q2" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Avoiding taking notes.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q2" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q3">
+          <div class="q-head">
+            <div class="q-num">3</div>
+            <div class="q-text">A client says: “It’s too expensive.” What can a good salesperson do?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q3" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Immediately lower the price.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q3" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Highlight the return on investment.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q3" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Compare with cheaper alternatives.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q3" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Explore the client’s real needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q3" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q4">
+          <div class="q-head">
+            <div class="q-num">4</div>
+            <div class="q-text">What are good practices for closing a sale?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q4" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Wait for the client to ask to buy.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q4" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Identify and use buying signals.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q4" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Never ask direct questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q4" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Offer a limited choice (e.g., color, model).</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q4" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q5">
+          <div class="q-head">
+            <div class="q-num">5</div>
+            <div class="q-text">During a product presentation, what is the main objective?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q5" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Show as many technical features as possible.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q5" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Focus the discussion on the client’s needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q5" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Repeat the same argument to convince.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q5" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Avoid objections by speaking quickly.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q5" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q6">
+          <div class="q-head">
+            <div class="q-num">6</div>
+            <div class="q-text">A client expresses an objection. What is the best attitude?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q6" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Interrupt immediately to correct them.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q6" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Listen to them fully.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q6" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Rephrase their objection to show understanding.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q6" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Ignore the objection and continue your pitch.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q6" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q7">
+          <div class="q-head">
+            <div class="q-num">7</div>
+            <div class="q-text">What are sources of new prospects?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q7" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Referrals from satisfied clients.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q7" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Trade shows.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q7" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Purchased databases.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q7" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Dissatisfied former clients.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q7" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q8">
+          <div class="q-head">
+            <div class="q-num">8</div>
+            <div class="q-text">In a sales interview, why ask open-ended questions?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q8" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">To encourage the client to talk more.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q8" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">To get limited and quick answers.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q8" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">To avoid hearing the client’s real needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q8" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">To actively involve the client in the discussion.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q8" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q9">
+          <div class="q-head">
+            <div class="q-num">9</div>
+            <div class="q-text">When is it appropriate to negotiate a price?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q9" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">At the very beginning of the meeting.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q9" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">After presenting the value of the product.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q9" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Even before understanding the needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q9" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">When the client insists strongly.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q9" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q10">
+          <div class="q-head">
+            <div class="q-num">10</div>
+            <div class="q-text">What behaviors help build a trusting relationship with a client?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q10" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Keeping your promises.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q10" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Listening carefully and taking notes.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q10" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Exaggerating to impress the client.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q10" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Remaining transparent and honest.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q10" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q11">
+          <div class="q-head">
+            <div class="q-num">11</div>
+            <div class="q-text">When a client hesitates to buy, what is a good approach?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q11" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Pressure them by saying the offer expires soon.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q11" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Ask questions to understand their hesitation.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q11" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Leave an uncomfortable silence to force a decision.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q11" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Offer an alternative choice (another product or service).</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q11" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q12">
+          <div class="q-head">
+            <div class="q-num">12</div>
+            <div class="q-text">What are effective techniques for overcoming a price-related objection?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q12" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Immediately lower the requested price.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q12" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Explain the added value of the product.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q12" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Compare with competing products.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q12" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Offer flexible payment terms.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q12" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q13">
+          <div class="q-head">
+            <div class="q-num">13</div>
+            <div class="q-text">What behaviors are seen as unprofessional in sales?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q13" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Arriving late to an appointment.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q13" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Not listening to the client.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q13" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Promising more than you can deliver.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q13" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Honestly admitting you don’t know the answer to a question.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q13" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q14">
+          <div class="q-head">
+            <div class="q-num">14</div>
+            <div class="q-text">What are essential qualities of a good salesperson?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q14" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Empathy.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q14" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Perseverance.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q14" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Patience.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q14" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Honesty.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q14" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q15">
+          <div class="q-head">
+            <div class="q-num">15</div>
+            <div class="q-text">A prospect says: “I’d like to think before deciding.” What is the most appropriate response?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q15" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">“Alright, I understand. May I call you back in two days?”</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q15" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">“There’s no need to think, it’s a no-brainer.”</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q15" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">“Take your time, but be aware the offer expires today.”</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q15" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">“I can help you reconsider your priorities.”</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q15" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q16">
+          <div class="q-head">
+            <div class="q-num">16</div>
+            <div class="q-text">What is the best way to open a sales meeting?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q16" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Start immediately with a technical demonstration.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q16" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Ask an engaging question about the client’s needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q16" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Talk at length about yourself to inspire trust.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q16" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Put the client at ease with a friendly approach.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q16" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q17">
+          <div class="q-head">
+            <div class="q-num">17</div>
+            <div class="q-text">What are effective ways to manage your time in sales?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q17" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Prioritize the most promising prospects.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q17" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Set a daily agenda.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q17" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Spend most of your time with clients who won’t buy.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q17" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Reserve time for after-sales follow-up.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q17" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q18">
+          <div class="q-head">
+            <div class="q-num">18</div>
+            <div class="q-text">A satisfied client is an excellent resource for:</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q18" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Obtaining referrals.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q18" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Generating testimonials.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q18" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Promoting new products.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q18" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Building a long-term relationship.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q18" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q19">
+          <div class="q-head">
+            <div class="q-num">19</div>
+            <div class="q-text">What strategies increase the chances of closing a sale?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q19" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Spotting buying signals.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q19" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Asking closing questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q19" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Avoiding the subject of closing.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q19" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Offering a choice rather than a closed decision (e.g., model A or B).</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q19" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q20">
+          <div class="q-head">
+            <div class="q-num">20</div>
+            <div class="q-text">At a trade show, what is the best strategy?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q20" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Wait for visitors to come to you.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q20" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Be proactive and start conversations.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q20" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Only distribute brochures without direct contact.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q20" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Collect contact details and plan follow-ups after the event.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q20" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q21">
+          <div class="q-head">
+            <div class="q-num">21</div>
+            <div class="q-text">When is it preferable to present the technical features of a product?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q21" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Right at the start, before asking questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q21" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Once the client’s needs have been identified.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q21" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">When the client requests more technical details.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q21" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Only at the end, when closing.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q21" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q22">
+          <div class="q-head">
+            <div class="q-num">22</div>
+            <div class="q-text">What methods are effective for getting a phone appointment?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q22" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Use a clear and concise script.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q22" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Smile in your voice and be enthusiastic.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q22" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Try to sell the product immediately on the phone.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q22" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Sell the appointment rather than the product.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q22" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q23">
+          <div class="q-head">
+            <div class="q-num">23</div>
+            <div class="q-text">What is a good way to respond to an objection about the competition?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q23" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Openly criticize competitors.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q23" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Show the unique advantages of your offer.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q23" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Objectively compare the differences.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q23" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Ignore the objection to avoid discussing it.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q23" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q24">
+          <div class="q-head">
+            <div class="q-num">24</div>
+            <div class="q-text">What actions demonstrate good follow-up after a sale?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q24" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Call to ensure client satisfaction.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q24" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Send a thank-you note.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q24" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Stay in touch for future opportunities.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q24" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Disappear after closing.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q24" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q25">
+          <div class="q-head">
+            <div class="q-num">25</div>
+            <div class="q-text">During a negotiation, what is most helpful in finding common ground?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q25" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Actively listen to the client’s priorities.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q25" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Be flexible on certain conditions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q25" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Maintain a defensive attitude.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q25" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Identify common points and propose compromises.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q25" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q26">
+          <div class="q-head">
+            <div class="q-num">26</div>
+            <div class="q-text">What are the main steps of an effective sales process?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q26" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Prospecting.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q26" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Discovery of needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q26" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Solution presentation.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q26" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Closing and follow-up.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q26" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q27">
+          <div class="q-head">
+            <div class="q-num">27</div>
+            <div class="q-text">What is the main goal of a product demonstration?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q27" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Impress the client with technical data.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q27" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Show how the product meets the client’s needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q27" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Highlight unnecessary features.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q27" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Involve the client in the demonstration.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q27" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q28">
+          <div class="q-head">
+            <div class="q-num">28</div>
+            <div class="q-text">What elements are part of good sales territory management?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q28" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Segment clients according to their potential.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q28" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Plan regular visits.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q28" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Focus solely on easy clients.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q28" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Measure the profitability of each area.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q28" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q29">
+          <div class="q-head">
+            <div class="q-num">29</div>
+            <div class="q-text">How should you react when a client compares your product only on price?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q29" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Insist that your price is the lowest.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q29" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Steer the conversation towards value and benefits.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q29" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Explain the total cost of ownership.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q29" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Demonstrate long-term savings.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q29" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q30">
+          <div class="q-head">
+            <div class="q-num">30</div>
+            <div class="q-text">What attitudes damage client trust?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q30" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Overpromising and underdelivering.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q30" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Not returning calls.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q30" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Being arrogant or condescending.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q30" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Providing poor after-sales service.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q30" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q31">
+          <div class="q-head">
+            <div class="q-num">31</div>
+            <div class="q-text">What is the best way to build a long-term relationship with a client?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q31" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Offer regular follow-up.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q31" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Be transparent and honest.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q31" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Avoid the client after the sale.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q31" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Reward loyalty with benefits.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q31" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q32">
+          <div class="q-head">
+            <div class="q-num">32</div>
+            <div class="q-text">During a cold call, which mistake should be avoided?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q32" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Not preparing a clear script.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q32" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Not listening to the prospect.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q32" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Talking too long without pausing.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q32" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Directly asking for the close.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q32" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q33">
+          <div class="q-head">
+            <div class="q-num">33</div>
+            <div class="q-text">What strategies improve the chances of closing a large, complex sale?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q33" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Involve multiple decision-makers in the process.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q33" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Understand the client’s strategic issues.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q33" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Focus only on price.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q33" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Demonstrate a clear return on investment.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q33" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q34">
+          <div class="q-head">
+            <div class="q-num">34</div>
+            <div class="q-text">What behaviors enhance a salesperson’s credibility?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q34" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Knowing your product perfectly.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q34" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Admitting when you don’t know an answer.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q34" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Being punctual and well-prepared.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q34" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Keeping your promises.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q34" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q35">
+          <div class="q-head">
+            <div class="q-num">35</div>
+            <div class="q-text">When a client compares several suppliers, what is the best approach?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q35" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Differentiate yourself through added value.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q35" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Insist on the lowest price.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q35" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Show proof or client testimonials.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q35" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Explain how your service stands out.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q35" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q36">
+          <div class="q-head">
+            <div class="q-num">36</div>
+            <div class="q-text">What techniques are effective for qualifying a prospect?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q36" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Determine their budget.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q36" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Identify their priority needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q36" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Verify their decision-making authority.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q36" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Evaluate their purchase timeline.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q36" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q37">
+          <div class="q-head">
+            <div class="q-num">37</div>
+            <div class="q-text">What actions increase the effectiveness of a sales presentation?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q37" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Use concrete examples.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q37" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Involve the client in the demonstration.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q37" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Use simple, clear language.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q37" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Recite a script without personalization.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q37" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q38">
+          <div class="q-head">
+            <div class="q-num">38</div>
+            <div class="q-text">An unhappy client expresses frustration. What is the right reaction?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q38" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Let the client speak without interrupting.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q38" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Acknowledge their frustration.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q38" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Offer a concrete solution.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q38" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Defend yourself immediately to protect your reputation.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q38" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q39">
+          <div class="q-head">
+            <div class="q-num">39</div>
+            <div class="q-text">What are good practices for managing a sales pipeline?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q39" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Regularly update your opportunities.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q39" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Prioritize the most promising prospects.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q39" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Keep all opportunities open, even lost ones.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q39" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Measure conversion rates.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q39" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q40">
+          <div class="q-head">
+            <div class="q-num">40</div>
+            <div class="q-text">What are examples of buying signals?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q40" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">The client asks about delivery terms.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q40" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">The client asks about financing details.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q40" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">The client talks about future use of the product.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q40" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">The client remains silent and distracted.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q40" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q41">
+          <div class="q-head">
+            <div class="q-num">41</div>
+            <div class="q-text">What actions help create a positive first impression?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q41" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Arrive on time.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q41" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Dress professionally.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q41" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Make eye contact.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q41" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Start with a sincere smile.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q41" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q42">
+          <div class="q-head">
+            <div class="q-num">42</div>
+            <div class="q-text">When a prospect asks for a discount, what is a good approach?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q42" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Say “yes” immediately.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q42" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">First explore their needs to justify value.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q42" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Offer added value instead of a discount.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q42" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Offer a financing plan.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q42" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q43">
+          <div class="q-head">
+            <div class="q-num">43</div>
+            <div class="q-text">What skills are essential in negotiation?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q43" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Actively listening.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q43" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Knowing how to compromise.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q43" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Staying calm.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q43" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Using only pressure to close.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q43" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q44">
+          <div class="q-head">
+            <div class="q-num">44</div>
+            <div class="q-text">What mistakes should be avoided during a presentation?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q44" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Reading your slides word for word.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q44" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Ignoring client questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q44" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Using overly technical jargon.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q44" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Speaking without structure or direction.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q44" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q45">
+          <div class="q-head">
+            <div class="q-num">45</div>
+            <div class="q-text">What factors contribute to good after-sales service?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q45" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Quick response to requests.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q45" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Offering effective solutions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q45" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Maintaining proactive communication.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q45" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Avoiding follow-up with the client after the sale.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q45" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q46">
+          <div class="q-head">
+            <div class="q-num">46</div>
+            <div class="q-text">What qualities increase a salesperson’s motivation?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q46" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Having clear goals.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q46" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Rewarding yourself after successes.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q46" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Keeping a positive attitude.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q46" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Working without planning.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q46" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q47">
+          <div class="q-head">
+            <div class="q-num">47</div>
+            <div class="q-text">What should a salesperson do when they don’t know the answer to a client’s question?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q47" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Guess a plausible answer.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q47" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Honestly admit and promise to check.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q47" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Divert the conversation.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q47" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Criticize the question.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q47" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q48">
+          <div class="q-head">
+            <div class="q-num">48</div>
+            <div class="q-text">What methods strengthen customer loyalty?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q48" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Offer consistently high-quality service.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q48" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Remain available for future needs.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q48" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Build a sincere personal relationship.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q48" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Ignore minor requests after the sale.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q48" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q49">
+          <div class="q-head">
+            <div class="q-num">49</div>
+            <div class="q-text">What are good practices during a client meeting?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q49" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Listen more than you talk.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q49" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Ask relevant questions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q49" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Offer tailored solutions.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q49" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Interrupt the client to speed things up.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q49" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">None of these answers.</span>
+            </label>
+          </div>
+        </div>
+        <div class="card question-card" id="q50">
+          <div class="q-head">
+            <div class="q-num">50</div>
+            <div class="q-text">What skills should a salesperson develop for long-term success?</div>
+          </div>
+          <div class="answers">
+            
+            <label class="answer">
+              <input type="checkbox" name="q50" value="A">
+              <span class="letter">A</span>
+              <span class="answer-text">Communication skills.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q50" value="B">
+              <span class="letter">B</span>
+              <span class="answer-text">Negotiation skills.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q50" value="C">
+              <span class="letter">C</span>
+              <span class="answer-text">Time management.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q50" value="D">
+              <span class="letter">D</span>
+              <span class="answer-text">Resilience to rejection.</span>
+            </label>
+            <label class="answer">
+              <input type="checkbox" name="q50" value="E">
+              <span class="letter">E</span>
+              <span class="answer-text">All of these answers are correct.</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h2>Self-assessment (13 competencies)</h2>
+            <span class="pill">Does not affect the score</span>
+          </div>
+          <p class="note">
+            Please read each statement and select your perception from the drop-down.
+            Choose the option that reflects how you genuinely feel.
+          </p>
+          <div class="sa-grid">
+            
+        <div class="sa-row">
+          <div class="sa-label">My ability to make initial contact and put the client at ease</div>
+          <div class="sa-select"><select name="self1" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to prospect and generate new opportunities</div>
+          <div class="sa-select"><select name="self2" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to identify and understand the client&#x27;s needs</div>
+          <div class="sa-select"><select name="self3" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My active listening and understanding of the customer</div>
+          <div class="sa-select"><select name="self4" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to present a solution tailored to the client&#x27;s needs</div>
+          <div class="sa-select"><select name="self5" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to communicate value and ROI (benefits over features)</div>
+          <div class="sa-select"><select name="self6" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to respond effectively to objections</div>
+          <div class="sa-select"><select name="self7" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to negotiate to reach a win-win agreement</div>
+          <div class="sa-select"><select name="self8" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to close the sale</div>
+          <div class="sa-select"><select name="self9" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to follow up and build customer loyalty</div>
+          <div class="sa-select"><select name="self10" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My time management and ability to prioritize</div>
+          <div class="sa-select"><select name="self11" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My ability to plan and manage my sales territory</div>
+          <div class="sa-select"><select name="self12" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+        <div class="sa-row">
+          <div class="sa-label">My professionalism and work ethic</div>
+          <div class="sa-select"><select name="self13" required>
+  <option value="">Choose...</option>
+  <option value="Very Low">Very Low</option><option value="Low">Low</option><option value="Medium">Medium</option><option value="Good">Good</option><option value="Very Good">Very Good</option><option value="Superior">Superior</option>
+</select></div>
+        </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="section-head">
+            <h2>Submit</h2>
+            <span class="pill">Auto-confirmation</span>
+          </div>
+          <p class="note">When you submit, the form will be sent securely. You will stay on this page and receive a confirmation message.</p>
+          <div class="actions">
+            <span class="note" id="submit-hint">Make sure you answered all required fields.</span>
+            <button class="btn btn-primary" id="submit-btn" type="submit">Submit responses</button>
+          </div>
+          <div class="status" id="success-message">✅ Thank you! Your responses have been submitted successfully.</div>
+          <div class="error" id="error-message">⚠️ Something went wrong while submitting. Please check your connection and try again.</div>
+        </div>
+
+        <div class="footer">
+          © 2026 K7 Service‑Conseil • PSV – Professional Sales Validation (CA)
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // ===== Timer (75 minutes) =====
+    const totalSeconds = 75 * 60;
+    let remainingSeconds = totalSeconds;
+    let timerInterval = null;
+    let isRunning = false;
+
+    function formatTime(s) {
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return String(m).padStart(2, '0') + ":" + String(sec).padStart(2, '0');
+    }
+
+    function updateTimerDisplay() {
+      document.getElementById("timer").textContent = formatTime(remainingSeconds);
+    }
+
+    function toggleTimer() {
+      const btn = document.getElementById("timer-btn");
+      if (!isRunning) {
+        isRunning = true;
+        btn.textContent = "Pause";
+        timerInterval = setInterval(() => {
+          if (remainingSeconds > 0) {
+            remainingSeconds--;
+            updateTimerDisplay();
+          } else {
+            clearInterval(timerInterval);
+            isRunning = false;
+            btn.disabled = true;
+            btn.textContent = "Time's up!";
+            document.getElementById("timer").textContent = "00:00";
+          }
+        }, 1000);
+      } else {
+        isRunning = false;
+        clearInterval(timerInterval);
+        btn.textContent = "Resume";
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timerInterval);
+      isRunning = false;
+      remainingSeconds = totalSeconds;
+      const btn = document.getElementById("timer-btn");
+      btn.disabled = false;
+      btn.textContent = "Start";
+      updateTimerDisplay();
+    }
+
+    updateTimerDisplay();
+
+    // ===== Click row to toggle checkbox (UX) =====
+    document.addEventListener('click', (e) => {
+      const row = e.target.closest('.answer');
+      if (!row) return;
+      const cb = row.querySelector('input[type="checkbox"]');
+      if (!cb) return;
+
+      // If user clicked directly on checkbox, let it handle naturally.
+      if (e.target.tagName.toLowerCase() !== 'input') {
+        cb.checked = !cb.checked;
+      }
+    });
+
+    // ===== AJAX submit (Netlify-compatible) =====
+    const form = document.getElementById('psv-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-message');
+    const errorMsg = document.getElementById('error-message');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const formData = new FormData(form);
+
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        });
+
+        if (res.ok) {
+          successMsg.style.display = 'block';
+          // Optional: collapse form content to focus on confirmation
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          submitBtn.textContent = 'Submitted ✓';
+        } else {
+          throw new Error('Network response not ok');
+        }
+      } catch (err) {
+        console.error(err);
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit responses';
+      }
+    });
+  </script>
 </body>
 </html>
