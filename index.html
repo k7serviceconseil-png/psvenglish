@@ -369,10 +369,6 @@
       .timer { justify-content: center; }
       .brand { min-width: 0; }
     }
-   .brand img {
-  height: 44px;
-  width: auto;
-} 
   </style>
 </head>
 
@@ -380,7 +376,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand" aria-label="K7 Service-Conseil">
-       <img src="logo-k7.png" alt="K7 Service-Conseil logo" style="height:44px; width:auto;" />
+        <img src="assets/logo.png" alt="K7 Service-Conseil logo" />
       </div>
 
       <div class="timer" aria-label="Timer">
@@ -399,6 +395,25 @@
     </section>
 
     <form id="psv-form" name="psv-ca-en" method="POST" data-netlify="true" netlify>
+<!-- Auto-generated score fields (filled by JS on submit) -->
+<div id="score-fields" style="display:none;">
+<input type="hidden" name="score_global" id="score_global" value="">
+<input type="hidden" name="score_approach_contact" id="score_approach_contact" value="">
+<input type="hidden" name="score_needs_discovery" id="score_needs_discovery" value="">
+<input type="hidden" name="score_solution_presentation" id="score_solution_presentation" value="">
+<input type="hidden" name="score_objection_handling" id="score_objection_handling" value="">
+<input type="hidden" name="score_negotiation" id="score_negotiation" value="">
+<input type="hidden" name="score_closing" id="score_closing" value="">
+<input type="hidden" name="score_follow_up_loyalty" id="score_follow_up_loyalty" value="">
+<input type="hidden" name="score_time_management" id="score_time_management" value="">
+<input type="hidden" name="score_territory_planning" id="score_territory_planning" value="">
+<input type="hidden" name="score_prospecting" id="score_prospecting" value="">
+<input type="hidden" name="score_active_listening" id="score_active_listening" value="">
+<input type="hidden" name="score_creativity_adaptability" id="score_creativity_adaptability" value="">
+<input type="hidden" name="score_professionalism" id="score_professionalism" value="">
+<input type="hidden" name="score_details_json" id="score_details_json" value="">
+</div>
+
       <input type="hidden" name="form-name" value="psv-ca-en" />
 
       <div class="grid">
@@ -2348,6 +2363,126 @@
       }
     });
 
+    
+    // ===== Scoring (Jaccard per question) =====
+    const ANSWER_KEY = {
+  1: ["B", "D"],
+  2: ["A", "B"],
+  3: ["B", "D"],
+  4: ["B", "D"],
+  5: ["B"],
+  6: ["B", "C"],
+  7: ["A", "B", "C"],
+  8: ["A", "D"],
+  9: ["B", "D"],
+  10: ["A", "B", "D"],
+  11: ["B", "D"],
+  12: ["B", "C", "D"],
+  13: ["A", "B", "C"],
+  14: ["A", "B", "C", "D", "E"],
+  15: ["A", "D"],
+  16: ["B", "D"],
+  17: ["A", "B", "D"],
+  18: ["A", "B", "C", "D", "E"],
+  19: ["A", "B", "D"],
+  20: ["B", "D"],
+  21: ["B", "C"],
+  22: ["A", "B", "D"],
+  23: ["B", "C"],
+  24: ["A", "B", "C"],
+  25: ["A", "B", "D"],
+  26: ["A", "B", "C", "D", "E"],
+  27: ["B", "D"],
+  28: ["A", "B", "D"],
+  29: ["B", "C", "D"],
+  30: ["A", "B", "C", "D", "E"],
+  31: ["A", "B", "D"],
+  32: ["A", "B", "C", "D", "E"],
+  33: ["A", "B", "D"],
+  34: ["A", "B", "C", "D", "E"],
+  35: ["A", "C", "D"],
+  36: ["A", "B", "C", "D", "E"],
+  37: ["A", "B", "C"],
+  38: ["A", "B", "C"],
+  39: ["A", "B", "D"],
+  40: ["A", "B", "C"],
+  41: ["A", "B", "C", "D", "E"],
+  42: ["B", "C", "D"],
+  43: ["A", "B", "C"],
+  44: ["A", "B", "C", "D", "E"],
+  45: ["A", "B", "C"],
+  46: ["A", "B", "C"],
+  47: ["B"],
+  48: ["A", "B", "C"],
+  49: ["A", "B", "C"],
+  50: ["A", "B", "C", "D", "E"]
+};
+    const DOMAIN_QUESTIONS = {
+  "Approach & contact": [1, 10, 16, 41],
+  "Needs discovery": [2, 8, 21, 36, 49],
+  "Solution presentation": [5, 21, 27, 37, 44],
+  "Objection handling": [3, 6, 12, 23, 29, 35, 38, 42],
+  "Negotiation": [9, 25, 33, 43],
+  "Closing": [4, 11, 15, 19, 33, 40],
+  "Follow-up & loyalty": [18, 24, 30, 31, 38, 45, 48],
+  "Time management": [17, 39, 46, 50],
+  "Territory planning": [28],
+  "Prospecting": [7, 20, 22, 32],
+  "Active listening": [2, 6, 10, 25, 43, 49],
+  "Creativity & adaptability": [29, 35, 38, 42, 47],
+  "Professionalism": [13, 14, 26, 30, 34, 41, 45, 47, 50]
+};
+
+    function jaccardScore(selected, correct) {
+      const sel = new Set(selected);
+      const cor = new Set(correct);
+      let tp = 0, fp = 0, fn = 0;
+      for (const v of sel) { if (cor.has(v)) tp++; else fp++; }
+      for (const v of cor) { if (!sel.has(v)) fn++; }
+      const denom = tp + fp + fn;
+      return denom === 0 ? 0 : (tp / denom);
+    }
+
+    function computeAndInjectScores(form) {
+      const perQuestion = {};
+      const perDomainScores = {};
+      for (const d in DOMAIN_QUESTIONS) perDomainScores[d] = [];
+
+      let total = 0;
+      for (let q = 1; q <= 50; q++) {
+        const name = 'q' + q;
+        const selected = Array.from(form.querySelectorAll('input[name="' + name + '"]:checked')).map(i => i.value);
+        const correct = ANSWER_KEY[q] || [];
+        const s = jaccardScore(selected, correct);
+        perQuestion[q] = { selected, correct, score: s };
+        total += s;
+
+        for (const d in DOMAIN_QUESTIONS) {
+          if (DOMAIN_QUESTIONS[d].includes(q)) perDomainScores[d].push(s);
+        }
+      }
+
+      const globalPct = Math.round((total / 50) * 100);
+
+      const setHidden = (id, value) => {
+        const el = form.querySelector('#' + id);
+        if (el) el.value = value;
+      };
+
+      setHidden('score_global', globalPct);
+
+      for (const d in perDomainScores) {
+        const arr = perDomainScores[d];
+        const avg = arr.length ? (arr.reduce((a,b)=>a+b,0) / arr.length) : 0;
+        const pct = Math.round(avg * 100);
+        const slug = d.toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'');
+        setHidden('score_' + slug, pct);
+      }
+
+      setHidden('score_details_json', JSON.stringify({ globalPct, perQuestion }));
+    }
+
+
     // ===== AJAX submit (Netlify-compatible) =====
     const form = document.getElementById('psv-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -2363,7 +2498,8 @@
       submitBtn.textContent = 'Submitting...';
 
       try {
-        const formData = new FormData(form);
+        computeAndInjectScores(form);
+      const formData = new FormData(form);
 
         const res = await fetch('/', {
           method: 'POST',
