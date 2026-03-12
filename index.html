@@ -628,7 +628,18 @@
       transition: width .4s ease;
     }
 
-    @media (max-width: 740px) {
+  
+  /* ── VALIDATION ── */
+  .field-error input, .field-error select { border-color: #dc2626 !important; background: #fff5f5 !important; box-shadow: 0 0 0 3px rgba(220,38,38,.12) !important; }
+  .field-error-msg { color: #dc2626; font-size: .82rem; font-weight: 700; margin-top: 5px; display: none; }
+  .field-error .field-error-msg { display: block; }
+  .q-error .fieldset-q { border: 2px solid #dc2626 !important; border-radius: 14px; padding: 10px; background: rgba(220,38,38,.03); }
+  .q-error .q-num { background: linear-gradient(135deg, #dc2626, #ef4444) !important; }
+  .validation-banner { display: none; background: linear-gradient(135deg, rgba(220,38,38,.1), rgba(220,38,38,.05)); border: 1.5px solid rgba(220,38,38,.35); border-radius: 14px; padding: 16px 20px; margin-bottom: 16px; color: #7f1d1d; font-weight: 700; font-size: .95rem; }
+  .validation-banner ul { margin: 8px 0 0 18px; font-weight: 600; font-size: .9rem; }
+  .validation-banner.show { display: block; }
+
+  @media (max-width: 740px) {
       .meta { grid-template-columns: 1fr; }
       .sa-row { grid-template-columns: 1fr; }
       .timer { justify-content: center; }
@@ -2672,6 +2683,60 @@
       }
     });
 
+
+    function validateForm() {
+      let errors = [];
+      let firstError = null;
+
+      // Required identity fields
+      const required = [
+        {id:'LastName', label:'Last Name'},
+        {id:'FirstName', label:'First Name'},
+        {id:'Email', label:'Email'},
+      ];
+      required.forEach(({id, label}) => {
+        const el = document.getElementById(id);
+        const wrap = el?.closest('.field');
+        if (!el?.value?.trim()) {
+          errors.push(label);
+          wrap?.classList.add('field-error');
+          if (!firstError) firstError = el;
+        } else {
+          wrap?.classList.remove('field-error');
+        }
+      });
+
+      // All 50 questions
+      const unanswered = [];
+      for (let q = 1; q <= 50; q++) {
+        const checked = document.querySelectorAll(`input[name="q${q}"]:checked`);
+        const wrap = document.querySelector(`input[name="q${q}"]`)?.closest('.fieldset-q');
+        if (checked.length === 0) {
+          unanswered.push(q);
+          wrap?.classList.add('q-error');
+          if (!firstError) firstError = wrap;
+        } else {
+          wrap?.classList.remove('q-error');
+        }
+      }
+
+      if (unanswered.length > 0) {
+        errors.push(`${unanswered.length} unanswered question(s): Q${unanswered.join(', Q')}`);
+      }
+
+      const banner = document.getElementById('validation-banner');
+      const list = document.getElementById('validation-list');
+      if (errors.length > 0) {
+        list.innerHTML = errors.map(e => `<li>${e}</li>`).join('');
+        banner.classList.add('show');
+        if (firstError) firstError.scrollIntoView({behavior:'smooth', block:'center'});
+        return false;
+      } else {
+        banner.classList.remove('show');
+        return true;
+      }
+    }
+
     // ===== AJAX submit (Netlify-compatible) =====
     const form = document.getElementById('psv-form');
     const submitBtn = document.getElementById('submit-btn');
@@ -2682,6 +2747,8 @@
       e.preventDefault();
       successMsg.style.display = 'none';
       errorMsg.style.display = 'none';
+
+      if (!validateForm()) return;
 
       submitBtn.disabled = true;
       submitBtn.textContent = 'Submitting...';
