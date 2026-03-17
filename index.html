@@ -559,18 +559,10 @@
       pointer-events: none;
     }
     .form-lock-overlay {
-      position: absolute;
-      inset: 0;
-      z-index: 30;
-      background: rgba(238, 241, 248, 0.72);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      position: absolute; inset: 0; z-index: 30;
+      background: rgba(238,241,248,.72); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
       border-radius: var(--radius);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 14px;
+      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 14px;
       cursor: pointer;
       transition: opacity .4s ease;
     }
@@ -654,7 +646,7 @@
   <div class="topbar">
     <div class="topbar-inner">
       <div class="brand" aria-label="K7 Service-Conseil">
-        <img src="logo-k7.png" alt="K7 Service-Conseil logo" />
+        <img src="logo-k7.png" alt="PSV Global – Profil de Succès en Ventes®" />
       </div>
 
       <div class="timer" id="timer-widget" aria-label="Timer — click to start" title="Click to start / pause the timer" onclick="toggleTimer()">
@@ -2571,7 +2563,7 @@
           <p class="note">When you submit, the form will be sent securely. You will stay on this page and receive a confirmation message.</p>
           <div class="actions">
             <span class="note" id="submit-hint">Make sure you answered all required fields.</span>
-            <button class="btn btn-primary" id="submit-btn" type="submit">Submit responses</button>
+            <button class="btn btn-primary" id="submit-btn" type="submit">Submit to PSV Global</button>
           </div>
           <div class="status" id="success-message">✅ Thank you! Your responses have been submitted successfully.</div>
           <div class="error" id="error-message">⚠️ Something went wrong while submitting. Please check your connection and try again.</div>
@@ -2776,7 +2768,7 @@
         console.error(err);
         errorMsg.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = 'Submit responses';
+        submitBtn.textContent = 'Submit to PSV Global';
       }
     });
   </script>
