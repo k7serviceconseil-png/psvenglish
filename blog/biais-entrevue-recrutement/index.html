@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'entrevue vous ment : 7 biais qui faussent votre jugement | PSV</title>
+<meta name="description" content="Effet de halo, biais de similarité, première impression... Les biais cognitifs sabotent vos décisions de recrutement. Apprenez à les reconnaître et à les contourner.">
+<link rel="canonical" href="https://psv-global.com/blog/biais-entrevue-recrutement">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f2044;--navy-mid:#1a3260;--accent:#c8a96e;--accent-light:#e8c98e;--white:#ffffff;--off-white:#f8f6f1;--text:#1c1c1c;--text-muted:#5a6070;--border:rgba(15,32,68,0.12);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:rgba(15,32,68,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,0.2);}
+  .nav-logo{font-family:'Playfair Display',serif;color:#ffffff !important;font-size:1.4rem;font-weight:700;text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-cta{background:var(--accent);color:var(--navy);padding:10px 24px;border-radius:4px;font-weight:600;font-size:0.85rem;text-decoration:none;text-transform:uppercase;}
+  .article-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,#162d5a 100%);padding:140px 5% 80px;position:relative;overflow:hidden;}
+  .hero-inner{max-width:800px;margin:0 auto;}
+  .article-category{display:inline-block;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.4);color:var(--accent);font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:24px;text-decoration:none;}
+  .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1.15;margin-bottom:24px;font-weight:900;}
+  .article-hero h1 em{color:var(--accent);font-style:normal;}
+  .article-meta{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+  .meta-item{color:rgba(255,255,255,0.55);font-size:0.85rem;}
+  .meta-dot{width:4px;height:4px;border-radius:50%;background:rgba(200,169,110,0.5);display:inline-block;}
+  .article-body{max-width:800px;margin:0 auto;padding:70px 5%;}
+  .article-body p{font-size:1.05rem;line-height:1.85;margin-bottom:24px;}
+  .article-body h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin:48px 0 20px;font-weight:700;}
+  .article-body strong{color:var(--navy);font-weight:600;}
+  .article-body ul{margin:0 0 24px 24px;}
+  .article-body li{font-size:1.05rem;line-height:1.8;margin-bottom:8px;}
+  .biais-list{display:flex;flex-direction:column;gap:24px;margin:32px 0;}
+  .biais-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:28px 32px;position:relative;overflow:hidden;}
+  .biais-item::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--accent);}
+  .biais-num{font-family:'Playfair Display',serif;font-size:0.78rem;font-weight:700;color:var(--accent);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px;}
+  .biais-item h3{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--navy);margin-bottom:10px;font-weight:700;}
+  .biais-definition{font-size:0.88rem;font-weight:600;color:var(--text-muted);margin-bottom:12px;font-style:italic;}
+  .biais-item p{font-size:0.95rem;color:var(--text);line-height:1.7;margin:0;}
+  .biais-item p + p{margin-top:12px;}
+  .solution-box{background:rgba(200,169,110,0.06);border:1px solid rgba(200,169,110,0.2);border-radius:8px;padding:14px 18px;margin-top:14px;}
+  .solution-box strong{color:var(--navy);font-size:0.88rem;}
+  .solution-box p{font-size:0.88rem;color:var(--text-muted);margin:4px 0 0;}
+  .highlight-box{background:rgba(200,169,110,0.08);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:24px 28px;margin:32px 0;}
+  .highlight-box p{margin:0;font-size:1rem;color:var(--navy);font-style:italic;}
+  .cta-article{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:16px;padding:48px;text-align:center;margin:60px 0;}
+  .cta-article h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:14px;}
+  .cta-article h3 em{color:var(--accent);font-style:normal;}
+  .cta-article p{color:rgba(255,255,255,0.65);margin-bottom:28px;}
+  .btn-primary{background:var(--accent);color:var(--navy);padding:15px 36px;border-radius:4px;font-weight:700;font-size:0.92rem;text-decoration:none;text-transform:uppercase;display:inline-block;}
+  .articles-related{background:var(--white);border-top:1px solid var(--border);padding:60px 5%;}
+  .articles-related-inner{max-width:800px;margin:0 auto;}
+  .related-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:28px;}
+  .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .related-card{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;display:block;}
+  .related-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .related-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);line-height:1.35;}
+  footer{background:#080f1e;padding:40px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.82rem;}
+  footer span{color:var(--accent);}
+  footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+  @media(max-width:700px){.related-grid{grid-template-columns:1fr;}}
+
+  /* NAV BLANC FORCÉ */
+  .nav-links a { color: #ffffff !important; font-weight: 600; }
+  .nav-links a:hover { color: #c8a96e !important; }
+  .nav-logo { color: #ffffff !important; }
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://psv-global.com/blog/biais-entrevue-recrutement">
+  <meta property="og:title" content="L'entrevue vous ment : 7 biais qui faussent votre jugement | PSV">
+  <meta property="og:description" content="Effet de halo, biais de similarité, première impression... Les biais cognitifs sabotent vos décisions de recrutement. Apprenez à les reconnaître et à les contourner.">
+  <meta property="og:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="PSV — Profil de Succès en Vente">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="L'entrevue vous ment : 7 biais qui faussent votre jugement | PSV">
+  <meta name="twitter:description" content="Effet de halo, biais de similarité, première impression... Les biais cognitifs sabotent vos décisions de recrutement. Apprenez à les reconnaître et à les contourner.">
+  <meta name="twitter:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+</head>
+<body>
+<nav>
+  <a href="https://psv-global.com/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="https://psv-global.com/a-propos.html">À propos</a>
+    <a href="https://psv-global.com/blog.html">Blog</a>
+    <a href="/pages-piliers/">Guides</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="https://psv-global.com/commande.html" class="nav-cta">Évaluer un candidat</a>
+</nav>
+<div class="article-hero">
+  <div class="hero-inner">
+    <a href="https://psv-global.com/blog.html" class="article-category">← Retour au blog</a>
+    <h1>L'entrevue vous ment : <em>7 biais</em> qui faussent votre jugement</h1>
+    <div class="article-meta">
+      <span class="meta-item">Recrutement</span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">7 min de lecture</span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">Avril 2026</span>
+    </div>
+  </div>
+</div>
+<div class="article-body">
+  <p>Vous êtes convaincu d'avoir un excellent jugement des gens. Après des années d'entrevues, vous sentez rapidement si quelqu'un a le profil ou non. Ce sentiment est réel — mais il est trompeur. Les recherches en psychologie cognitive montrent que nos décisions de recrutement sont systématiquement influencées par des biais dont nous ne sommes même pas conscients.</p>
+  <p>Voici les 7 biais les plus dommageables en recrutement commercial — et comment les neutraliser.</p>
+
+  <h2>Les 7 biais qui sabotent vos décisions</h2>
+  <div class="biais-list">
+    <div class="biais-item">
+      <div class="biais-num">Biais 01</div>
+      <h3>L'effet de halo</h3>
+      <div class="biais-definition">« Il est si charismatique qu'il doit être un excellent vendeur. »</div>
+      <p>Une qualité frappante — l'apparence, le charisme, un diplôme prestigieux — colore notre perception de toutes les autres qualités du candidat. Un candidat qui fait une excellente première impression sera perçu comme plus intelligent, plus compétent et plus fiable qu'il ne l'est réellement.</p>
+      <p>En vente, l'effet de halo est particulièrement dangereux car les bons vendeurs sont justement entraînés à créer des premières impressions mémorables.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Évaluez les aptitudes avant l'entrevue. Un rapport PSV complété avant la première rencontre vous donne des données objectives avant que le charisme du candidat ne colore votre jugement.</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 02</div>
+      <h3>Le biais de similarité</h3>
+      <div class="biais-definition">« Il me ressemble — il doit avoir la même approche gagnante. »</div>
+      <p>Nous évaluons plus favorablement les candidats qui partagent nos valeurs, notre parcours, notre style de communication ou même nos passe-temps. Ce biais est particulièrement fort chez les gestionnaires qui ont eux-mêmes réussi en vente — ils cherchent inconsciemment leur propre reflet.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Impliquez plusieurs personnes dans le processus d'entrevue et utilisez des critères objectifs d'évaluation comme grille de référence commune.</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 03</div>
+      <h3>Le biais de confirmation</h3>
+      <div class="biais-definition">« Je savais dès le départ qu'il était le bon. »</div>
+      <p>Une fois qu'on a formé une impression favorable d'un candidat, on cherche inconsciemment à confirmer cette impression plutôt qu'à la tester. Les questions deviennent suggestives, les réponses ambiguës sont interprétées positivement, et les signaux d'alarme sont minimisés.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Préparez des questions difficiles à l'avance et posez-les à tous les candidats, même — surtout — à ceux que vous aimez déjà.</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 04</div>
+      <h3>L'effet de récence</h3>
+      <div class="biais-definition">« Le dernier candidat était tellement meilleur. »</div>
+      <p>Le dernier candidat rencontré reste en mémoire plus clairement que les premiers. Si vous avez rencontré cinq candidats, le cinquième a un avantage structurel sur le premier — peu importe la qualité objective de chacun.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Prenez des notes structurées immédiatement après chaque entrevue et évaluez chaque candidat sur la même grille avant de passer au suivant.</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 05</div>
+      <h3>Le biais de contraste</h3>
+      <div class="biais-definition">« Après les deux candidats médiocres, celui-ci semble exceptionnel. »</div>
+      <p>Notre évaluation d'un candidat est influencée par les candidats que nous venons de voir. Un candidat moyen paraît brillant après deux candidats faibles, et un candidat fort paraît décevant après un candidat exceptionnel.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Évaluez chaque candidat selon des critères absolus, pas relatifs. La question n'est pas « est-il meilleur que les autres ? » mais « atteint-il le niveau requis pour ce poste ? »</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 06</div>
+      <h3>Le biais de l'autorité perçue</h3>
+      <div class="biais-definition">« Il vient de chez notre plus grand concurrent — il doit être excellent. »</div>
+      <p>Le nom d'une entreprise reconnue sur un CV génère une présomption de compétence qui n'est pas toujours justifiée. Un vendeur qui a travaillé dans une grande organisation structurée peut ne pas avoir les aptitudes pour performer dans une PME où il devra tout construire lui-même.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Distinguez les aptitudes transférables des aptitudes spécifiques au contexte. Un rapport PSV vous dit ce que le candidat peut faire — pas seulement où il a travaillé.</p></div>
+    </div>
+
+    <div class="biais-item">
+      <div class="biais-num">Biais 07</div>
+      <h3>L'attribution causale erronnée</h3>
+      <div class="biais-definition">« Il a doublé les ventes de son entreprise — il fera pareil chez nous. »</div>
+      <p>On attribue les succès passés d'un vendeur uniquement à ses compétences personnelles, sans tenir compte du contexte : un marché en croissance, un produit fort, un territoire peu exploré ou une équipe de soutien exceptionnelle. Inversement, les échecs sont attribués à des facteurs externes.</p>
+      <div class="solution-box"><strong>La solution :</strong> <p>Posez des questions de contexte systématiques : quel était le taux de croissance du marché ? Quel pourcentage de la croissance était organique vs acquisition ? Comment ses collègues ont-ils performé sur la même période ?</p></div>
+    </div>
+  </div>
+
+  <h2>La seule vraie protection contre ces biais</h2>
+  <p>La prise de conscience de ces biais aide — mais ne les élimine pas. Des études montrent que même les recruteurs entraînés à reconnaître leurs biais continuent à en être influencés dans leurs décisions réelles.</p>
+  <p>La vraie protection est de séparer l'évaluation des aptitudes de l'entrevue. Quand vous avez des données objectives en main avant de rencontrer le candidat, vous pouvez utiliser l'entrevue pour ce qu'elle fait bien — évaluer la personnalité, la motivation et l'adéquation culturelle — sans lui demander de prédire la performance.</p>
+
+  <div class="highlight-box">
+    <p>« Un gestionnaire qui se fie à son instinct prend une décision de 80 000 $ basée sur une conversation d'une heure. Un gestionnaire qui utilise le PSV prend cette même décision avec des données objectives collectées sur 60 questions validées sur 35 ans de terrain. »</p>
+  </div>
+
+  <div class="cta-article">
+    <h3>Neutralisez vos biais avec des données.<br><em>Avant votre prochaine entrevue.</em></h3>
+    <p>Le PSV vous donne un portrait objectif des aptitudes commerciales réelles de votre candidat — avant que le charisme ne biaise votre jugement.</p>
+    <a href="https://psv-global.com/commande.html" class="btn-primary">Évaluer un candidat — 125 $ →</a>
+  </div>
+</div>
+
+<div class="articles-related">
+  <div class="articles-related-inner">
+    <h2 class="related-title">Articles connexes</h2>
+    <div class="related-grid">
+      <a href="https://psv-global.com/blog/pourquoi-vendeurs-ratent-objectifs" class="related-card"><div class="related-tag">Recrutement</div><h4>Pourquoi 80 % des vendeurs ratent leurs objectifs la première année</h4></a>
+      <a href="https://psv-global.com/blog/cout-mauvaise-embauche-vente" class="related-card"><div class="related-tag">Gestion</div><h4>Le vrai coût d'une mauvaise embauche en vente</h4></a>
+      <a href="https://psv-global.com/blog/13-competences-reussite-vente" class="related-card"><div class="related-tag">Évaluation</div><h4>Les 13 compétences qui prédisent la réussite en vente</h4></a>
+      <a href="https://psv-global.com/blog/questions-entrevue-aptitudes-vente" class="related-card"><div class="related-tag">Recrutement</div><h4>Questions d'entrevue pour valider les aptitudes de vente</h4></a>
+    </div>
+  </div>
+</div>
+<footer><p>© 2026 <span>PSV — Profil de Succès en Vente</span>. Tous droits réservés. · <a href="https://psv-global.com/">Accueil</a> · <a href="https://psv-global.com/a-propos.html">À propos</a> · <a href="/pages-piliers/">Guides</a> · <a href="https://psv-global.com/blog.html">Blog</a></p></footer>
+</body>
+</html>

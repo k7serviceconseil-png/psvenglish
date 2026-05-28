@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Évaluer et développer votre équipe de vente — PSV Global</title>
+<meta name="description" content="Le PSV aide les gestionnaires à mieux comprendre pourquoi certains vendeurs plafonnent, à structurer le coaching et à prendre des décisions éclairées avant de remplacer un représentant.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2044;--navy-mid:#1a3260;--accent:#c8a96e;--accent-light:#e8c98e;
+  --white:#fff;--off:#f8f6f1;--text:#1c1c1c;--muted:#5a6070;
+  --border:rgba(15,32,68,.12);--soft:#eef3fb;--shadow:0 18px 45px rgba(15,32,68,.12)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',Aptos,Arial,sans-serif;background:var(--off);color:var(--text);line-height:1.68}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:rgba(15,32,68,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,.2)}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;color:#fff!important;font-size:1.4rem;font-weight:700;letter-spacing:.04em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.7)!important;letter-spacing:.02em}
+.nav-links a:hover{color:var(--accent)!important}
+.nav-links a.active{color:#fff!important}
+.nav-cta{background:var(--accent);color:var(--navy)!important;padding:10px 24px;border-radius:4px;font-weight:800;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+.nav-secondary{font-size:.78rem!important;color:rgba(255,255,255,.45)!important;border:1px solid rgba(255,255,255,.15);padding:8px 16px;border-radius:4px}
+.nav-secondary:hover{color:rgba(255,255,255,.75)!important;border-color:rgba(255,255,255,.3)}
+
+/* HERO */
+.hero{background:radial-gradient(circle at top right,rgba(200,169,110,.14),transparent 35%),linear-gradient(135deg,var(--navy),var(--navy-mid) 60%,#162d5a);color:#fff;padding:150px 5% 100px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;top:-20%;right:-10%;width:70vw;height:70vw;max-width:900px;background:radial-gradient(circle,rgba(200,169,110,.08),transparent 70%);border-radius:50%}
+.inner{position:relative;max-width:1180px;margin:0 auto}
+.eyebrow{display:inline-block;background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.4);color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 15px;border-radius:20px;margin-bottom:24px}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,5vw,4.6rem);line-height:1.05;letter-spacing:-.04em;margin-bottom:24px}
+h1 em,h2 em{color:var(--accent);font-style:normal}
+.lead{font-size:1.14rem;line-height:1.8;color:rgba(255,255,255,.8);max-width:780px;margin-bottom:36px}
+.hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px;padding-top:40px;border-top:1px solid rgba(255,255,255,.12)}
+.stat{display:flex;flex-direction:column;gap:4px}
+.stat-num{font-family:'Playfair Display',Georgia,serif;font-size:2.4rem;color:var(--accent);line-height:1}
+.stat-label{font-size:.82rem;color:rgba(255,255,255,.55);max-width:160px;line-height:1.4}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:4px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.9rem}
+.btn-primary{background:var(--accent);color:var(--navy)}
+.btn-secondary{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06)}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-inner{max-width:1180px;margin:0 auto}
+.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.76rem;margin-bottom:12px}
+h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-.035em;margin-bottom:18px}
+.section-p{color:var(--muted);font-size:1.08rem;max-width:850px;line-height:1.8}
+.soft{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+/* PARCOURS — séquence narrative */
+.parcours{display:grid;gap:0;margin-top:48px;position:relative}
+.parcours:before{content:"";position:absolute;left:28px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(200,169,110,.1));z-index:0}
+.parcours-step{display:grid;grid-template-columns:60px 1fr;gap:28px;padding:0 0 48px;position:relative;z-index:1}
+.parcours-step:last-child{padding-bottom:0}
+.step-num{width:58px;height:58px;border-radius:50%;background:var(--navy);color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:3px solid var(--accent);box-shadow:0 4px 16px rgba(15,32,68,.2)}
+.step-body{padding-top:10px}
+.step-body h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.45rem;margin-bottom:10px;line-height:1.2}
+.step-body p{color:var(--muted);font-size:1rem;line-height:1.75;margin-bottom:14px}
+.step-link{color:var(--navy);font-weight:700;font-size:.9rem;border-bottom:2px solid var(--accent);padding-bottom:2px;display:inline-block}
+.step-link:hover{color:var(--accent)}
+
+/* GRILLE ARTICLES */
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.article-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 22px rgba(15,32,68,.04);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:10px}
+.article-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(15,32,68,.1)}
+.article-tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.article-card h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.18rem;line-height:1.3}
+.article-card p{color:var(--muted);font-size:.96rem;flex:1}
+.article-arrow{color:var(--accent);font-size:.85rem;font-weight:700;margin-top:4px}
+
+/* DEUX COLONNES */
+.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.two-col.reverse{grid-template-columns:.9fr 1.1fr}
+
+/* CALLOUT COUT */
+.cout-block{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;border-radius:28px;padding:48px;box-shadow:var(--shadow)}
+.cout-block h3{font-family:'Playfair Display',Georgia,serif;font-size:2rem;margin-bottom:16px;color:#fff}
+.cout-block p{color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:24px}
+.cout-block ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.cout-block li{color:rgba(255,255,255,.8);padding-left:22px;position:relative}
+.cout-block li:before{content:"→";position:absolute;left:0;color:var(--accent);font-weight:700}
+
+/* BLOC DECISION */
+.decision-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.decision-card{border-radius:18px;padding:28px;border:1px solid var(--border);background:#fff}
+.decision-card.highlight{background:var(--navy);border-color:var(--navy)}
+.decision-card h4{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;color:var(--navy);margin-bottom:10px}
+.decision-card.highlight h4{color:var(--accent)}
+.decision-card p{color:var(--muted);font-size:.95rem;line-height:1.7}
+.decision-card.highlight p{color:rgba(255,255,255,.7)}
+.decision-icon{font-size:1.8rem;margin-bottom:14px}
+
+/* PONT VERS UNIVERS 2 */
+.bridge{background:var(--soft);border-radius:24px;padding:40px;border:1px solid rgba(15,32,68,.1);display:flex;align-items:center;gap:34px;margin-top:48px}
+.bridge-text h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.5rem;margin-bottom:10px}
+.bridge-text p{color:var(--muted);font-size:.98rem;line-height:1.75}
+.bridge-cta{flex-shrink:0}
+.btn-outline{border:2px solid var(--navy);color:var(--navy);padding:12px 26px;border-radius:4px;font-weight:800;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;display:inline-block;white-space:nowrap}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+/* FINAL */
+.final{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;text-align:center;padding:90px 5%}
+.final h2{color:#fff;max-width:900px;margin:0 auto 20px}
+.final p{color:rgba(255,255,255,.75);max-width:720px;margin:0 auto 34px;font-size:1.08rem;line-height:1.8}
+
+footer{background:#080f1e;padding:40px 5%;text-align:center;color:rgba(255,255,255,.35);font-size:.82rem}
+footer span{color:var(--accent)}
+
+@media(max-width:980px){
+  .two-col,.two-col.reverse{grid-template-columns:1fr}
+  .decision-grid{grid-template-columns:1fr 1fr}
+  .bridge{flex-direction:column;text-align:center}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .hero{padding-top:125px}
+  .articles-grid{grid-template-columns:1fr}
+  .decision-grid{grid-template-columns:1fr}
+  .hero-stats{gap:28px}
+  .btns{flex-direction:column}.btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="/equipes-de-vente/" class="active">Performance des équipes de vente</a>
+    <a href="/recrutement-vente/">Vous recrutez ?</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="/commande/" class="nav-cta">Évaluer mon équipe</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">Performance · Coaching · Développement des équipes</div>
+    <h1>Pourquoi certains de vos vendeurs<br>ne <em>performent pas</em> à leur plein potentiel.</h1>
+    <p class="lead">Le PSV aide les gestionnaires à aller au-delà des chiffres : comprendre les comportements qui freinent un représentant, structurer le coaching et décider avec plus de recul avant de former, d'augmenter la pression — ou de remplacer.</p>
+    <div class="btns">
+      <a href="/commande/" class="btn btn-primary">Évaluer mon équipe</a>
+      <a href="#parcours" class="btn btn-secondary">Voir le parcours complet</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-num">125 $</span>
+        <span class="stat-label">par évaluation individuelle</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">13</span>
+        <span class="stat-label">domaines commerciaux évalués</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num" style="font-size:1.5rem;line-height:1.2">Votre ratio</span>
+        <span class="stat-label">coût de la sous-performance vs 125 $ — calculez-le <a href="https://psv-calculateur-mai-2026.netlify.app/" style="color:var(--accent);border-bottom:1px solid rgba(200,169,110,.4)">avec le calculateur →</a></span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- POURQUOI -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Le vrai enjeu</div>
+    <h2>Ce que les chiffres de vente<br>ne révèlent pas.</h2>
+    <p class="section-p">Un vendeur peut atteindre ses cibles tout en plafonnant structurellement. Un autre peut sembler en difficulté pour des raisons très précises que ni l'expérience de gestion ni les résultats trimestriels ne permettent d'identifier clairement.</p>
+    <div class="articles-grid" style="margin-top:40px">
+      <div class="article-card">
+        <div class="article-tag">Coaching</div>
+        <h3>Le coaching reste général sans lecture précise</h3>
+        <p>Sans comprendre les comportements spécifiques qui freinent un représentant, les interventions du gestionnaire tournent souvent en rond.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">Stagnation</div>
+        <h3>Certains vendeurs plafonnent de façon invisible</h3>
+        <p>La discipline, la prospection, la résilience — ces dimensions peuvent se dégrader lentement, bien avant que les chiffres ne l'indiquent clairement.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">Décision</div>
+        <h3>Le remplacement arrive souvent trop vite</h3>
+        <p>Plusieurs décisions de remplacement seraient évitées — ou améliorées — avec une meilleure compréhension des causes réelles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS NARRATIF -->
+<section class="soft" id="parcours">
+  <div class="section-inner">
+    <div class="kicker">La progression logique</div>
+    <h2>Un parcours en quatre étapes,<br>de la <em>compréhension</em> à la décision.</h2>
+    <p class="section-p">Le PSV accompagne les gestionnaires à travers les questions réelles qui se posent dans la gestion d'une équipe de vente.</p>
+    <div class="parcours" style="margin-top:56px">
+
+      <div class="parcours-step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Comprendre la performance réelle de vos vendeurs</h3>
+          <p>Avant d'agir, il faut voir clairement. Le PSV évalue 13 domaines commerciaux — de l'approche et contact à la prospection, en passant par la gestion des objections, l'écoute active, la négociation et le professionnalisme. Ce n'est pas une évaluation de personnalité — c'est une lecture ciblée sur ce qui influence directement les résultats en vente.</p>
+          <a href="/blog/comment-evaluer-equipe-de-vente/" class="step-link">Comment évaluer une équipe de vente →</a>
+        </div>
+      </div>
+
+      <div class="parcours-step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Identifier pourquoi certains représentants plafonnent</h3>
+          <p>Un vendeur qui évite la prospection, qui perd de l'élan après un refus, ou qui manque de structure dans son suivi — ce sont des comportements observables qu'une bonne évaluation peut rendre lisibles. Comprendre le pourquoi change complètement la nature de l'intervention.</p>
+          <a href="/blog/pourquoi-certains-vendeurs-plafonnent/" class="step-link">Pourquoi certains vendeurs plafonnent →</a>
+        </div>
+      </div>
+
+      <div class="parcours-step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Structurer un coaching plus précis et plus utile</h3>
+          <p>Avec une lecture claire des forces et des zones à développer, les interventions du gestionnaire deviennent plus concrètes. Moins de généralités, plus de cibles précises. Le temps de coaching est investi là où il peut vraiment faire une différence.</p>
+          <a href="/blog/mieux-coacher-representant-en-difficulte/" class="step-link">Comment mieux coacher un représentant en difficulté →</a>
+        </div>
+      </div>
+
+      <div class="parcours-step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Décider avec recul : coacher, former ou remplacer ?</h3>
+          <p>C'est souvent la décision la plus difficile — et la plus coûteuse si elle est mal faite. Avant de conclure qu'un représentant doit être remplacé, une évaluation structurée permet de s'assurer que les bonnes questions ont été posées. Et si le remplacement est la bonne décision, elle sera beaucoup mieux fondée.</p>
+          <a href="/blog/avant-de-remplacer-un-vendeur-quoi-analyser/" class="step-link">Avant de remplacer un vendeur : quoi analyser →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 13 DOMAINES -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Ce que le PSV mesure</div>
+    <h2>13 domaines commerciaux évalués —<br>pas une évaluation de <em>personnalité</em>.</h2>
+    <p class="section-p">Le PSV analyse les aptitudes directement liées à la performance en vente. Chaque domaine correspond à une réalité concrète du terrain commercial.</p>
+    <div class="articles-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="article-card">
+        <div class="article-tag">01</div>
+        <h3>Approche &amp; contact</h3>
+        <p>Capacité à créer une bonne première impression et établir un lien de confiance.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">02</div>
+        <h3>Découverte des besoins</h3>
+        <p>Art de poser les questions pertinentes pour comprendre les besoins et motivations.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">03</div>
+        <h3>Présentation de la solution</h3>
+        <p>Aptitude à démontrer la valeur en lien direct avec les priorités du client.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">04</div>
+        <h3>Gestion des objections</h3>
+        <p>Habileté à répondre aux résistances avec calme et assurance.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">05</div>
+        <h3>Négociation</h3>
+        <p>Capacité à défendre la valeur et atteindre des ententes gagnant-gagnant.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">06</div>
+        <h3>Conclusion de la vente</h3>
+        <p>Maîtrise des techniques de closing et capacité à déclencher la décision.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">07</div>
+        <h3>Suivi &amp; fidélisation</h3>
+        <p>Aptitude à entretenir la relation et générer des ventes additionnelles.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">08</div>
+        <h3>Gestion du temps</h3>
+        <p>Organisation, planification et priorisation au quotidien.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">09</div>
+        <h3>Planification de territoire</h3>
+        <p>Structuration et ciblage optimal du portefeuille client.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">10</div>
+        <h3>Prospection</h3>
+        <p>Efficacité dans la création de nouvelles opportunités.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">11</div>
+        <h3>Écoute active</h3>
+        <p>Compréhension réelle et reformulation dans la conversation commerciale.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">12</div>
+        <h3>Créativité &amp; adaptabilité</h3>
+        <p>Capacité à s'ajuster, innover et surmonter les obstacles.</p>
+      </div>
+      <div class="article-card">
+        <div class="article-tag">13</div>
+        <h3>Professionnalisme</h3>
+        <p>Éthique, image et crédibilité perçue par les clients.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COÛT SOUS-PERFORMANCE -->
+<section>
+  <div class="section-inner two-col">
+    <div>
+      <div class="kicker">Les coûts invisibles</div>
+      <h2>Ce que la sous-performance<br>vous coûte <em>réellement</em>.</h2>
+      <p class="section-p">Plusieurs gestionnaires sous-estiment les impacts financiers d'un vendeur qui plafonne, qui évite la prospection ou qui manque de structure. Ces coûts s'accumulent silencieusement — bien avant qu'une décision de remplacement soit envisagée.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+        <a href="/le-vrai-cout-dune-mauvaise-embauche-en-vente/" class="step-link">Le vrai coût d'un vendeur qui sous-performe →</a>
+        <a href="https://psv-calculateur-mai-2026.netlify.app/" class="step-link">Calculer l'impact pour votre équipe →</a>
+      </div>
+    </div>
+    <div class="cout-block">
+      <h3>Les impacts souvent sous-estimés</h3>
+      <p>Un représentant qui plafonne depuis 12 mois, ça ressemble à quoi en dollars réels ?</p>
+      <ul>
+        <li>Revenus non générés sur les opportunités manquées</li>
+        <li>Temps de gestion investi sans résultats clairs</li>
+        <li>Effet sur la dynamique et la motivation du reste de l'équipe</li>
+        <li>Coût du remplacement si la décision est finalement prise</li>
+        <li>Coût d'une formation mal ciblée parce que le vrai problème n'a pas été identifié</li>
+      </ul>
+      <a href="https://psv-calculateur-mai-2026.netlify.app/" class="btn btn-primary">Utiliser le calculateur</a>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES BLOG UNIVERS 1 -->
+<section class="soft">
+  <div class="section-inner">
+    <div class="kicker">Guides et ressources — Équipes de vente</div>
+    <h2>Articles pour les gestionnaires<br>qui veulent <em>voir plus clair</em>.</h2>
+    <p class="section-p">Des analyses concrètes sur les comportements commerciaux, le coaching et les décisions de gestion des équipes de vente.</p>
+    <div class="articles-grid">
+      <a href="/blog/comment-evaluer-equipe-de-vente/" class="article-card">
+        <div class="article-tag">Évaluation</div>
+        <h3>Comment évaluer une équipe de vente</h3>
+        <p>Mieux comprendre les forces et les besoins de développement de vos représentants.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/pourquoi-certains-vendeurs-plafonnent/" class="article-card">
+        <div class="article-tag">Performance</div>
+        <h3>Pourquoi certains vendeurs plafonnent</h3>
+        <p>Comprendre les causes invisibles derrière la stagnation d'un représentant.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/mieux-coacher-representant-en-difficulte/" class="article-card">
+        <div class="article-tag">Coaching</div>
+        <h3>Comment mieux coacher un représentant en difficulté</h3>
+        <p>Structurer des interventions plus précises et mieux ciblées.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/avant-de-remplacer-un-vendeur-quoi-analyser/" class="article-card">
+        <div class="article-tag">Décision</div>
+        <h3>Avant de remplacer un vendeur : quoi analyser</h3>
+        <p>Les questions à se poser avant de conclure qu'un remplacement est nécessaire.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/erreurs-frequentes-gestionnaires-ventes/" class="article-card">
+        <div class="article-tag">Gestion</div>
+        <h3>Les erreurs fréquentes des gestionnaires des ventes</h3>
+        <p>Les angles morts les plus courants dans la gestion d'une équipe commerciale.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/identifier-besoins-formation-equipe-vente/" class="article-card">
+        <div class="article-tag">Formation</div>
+        <h3>Identifier les besoins de formation de votre équipe</h3>
+        <p>Comment cibler les formations qui auront un impact réel sur la performance.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/pourquoi-vendeurs-evitent-prospection/" class="article-card">
+        <div class="article-tag">Prospection</div>
+        <h3>Pourquoi certains vendeurs évitent la prospection</h3>
+        <p>Les comportements et les causes réelles derrière la résistance à prospecter.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/signes-representant-manque-structure/" class="article-card">
+        <div class="article-tag">Structure</div>
+        <h3>Les signes qu'un représentant manque de structure</h3>
+        <p>Reconnaître les indicateurs d'un manque de rigueur avant qu'ils deviennent critiques.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/equipes-vente-stagnent-malgre-bons-produits/" class="article-card">
+        <div class="article-tag">Stagnation</div>
+        <h3>Pourquoi les équipes stagnent malgré de bons produits</h3>
+        <p>Quand le problème n'est pas le produit mais les comportements commerciaux.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PONT VERS UNIVERS 2 -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Et si vous devez quand même recruter ?</div>
+    <h2>La décision de remplacement est prise.<br>Voici comment <em>mieux recruter</em> la prochaine fois.</h2>
+    <p class="section-p">Une fois qu'on a bien analysé la situation et que le remplacement est la bonne décision, le PSV peut aussi vous aider à réduire les risques liés à l'embauche du prochain représentant.</p>
+    <div class="bridge">
+      <div class="bridge-text">
+        <h3>Univers Recrutement — Évaluer avant d'embaucher</h3>
+        <p>Réduire les angles morts, structurer les entrevues, comparer les candidats avec plus de recul. Le même outil PSV, dans un contexte différent.</p>
+      </div>
+      <div class="bridge-cta">
+        <a href="/recrutement-vente/" class="btn-outline">Découvrir l'Univers Recrutement →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Avant de former, d'augmenter la pression ou de remplacer — mieux comprendre change tout.</h2>
+  <p>Le PSV donne aux gestionnaires une lecture structurée des comportements commerciaux de leurs représentants. Pour 125 $, voyez ce que vos chiffres ne vous disent pas.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="/commande/" class="btn btn-primary">Évaluer mon équipe</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/" class="btn btn-secondary">Calculer le coût de la sous-performance</a>
+  </div>
+</section>
+
+<footer>© 2026 <span>PSV Global</span> · Profil de Succès en Vente® · Tous droits réservés</footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — PSV | 35 ans d'expertise en recrutement de vendeurs</title>
+<meta name="description" content="Découvrez l'histoire du PSV — Profil de Succès en Vente. 35 ans d'expérience en recrutement commercial pour PME québécoises et canadiennes.">
+<link rel="canonical" href="https://psv-global.com/a-propos.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2044; --navy-mid: #1a3260; --navy-light: #234080;
+    --accent: #c8a96e; --accent-light: #e8c98e;
+    --white: #ffffff; --off-white: #f8f6f1;
+    --text: #1c1c1c; --text-muted: #5a6070;
+    --border: rgba(15,32,68,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--off-white); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 5%;
+    background: rgba(15,32,68,0.97); backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(200,169,110,0.2);
+  }
+  .nav-logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: var(--navy); padding: 10px 24px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--accent-light); }
+
+  .page-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #162d5a 100%);
+    padding: 140px 5% 90px;
+    text-align: center; position: relative; overflow: hidden;
+  }
+  .page-hero::before {
+    content: ''; position: absolute; top: -20%; right: -10%;
+    width: 70vw; height: 70vw; max-width: 900px;
+    background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .hero-badge { display: inline-block; background: rgba(200,169,110,0.15); border: 1px solid rgba(200,169,110,0.4); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4vw, 3.4rem); color: var(--white); line-height: 1.15; margin-bottom: 20px; font-weight: 900; }
+  .page-hero h1 em { color: var(--accent); font-style: normal; }
+  .page-hero p { color: rgba(255,255,255,0.7); font-size: 1.1rem; max-width: 600px; margin: 0 auto; line-height: 1.7; font-weight: 300; }
+
+  section { padding: 80px 5%; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  .section-label { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: rgba(200,169,110,0.1); border: 1px solid rgba(200,169,110,0.25); padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--navy); line-height: 1.2; margin-bottom: 18px; }
+
+  /* Histoire */
+  .histoire { background: var(--white); }
+  .histoire-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 50px; }
+  .histoire-text p { font-size: 1rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 18px; }
+  .histoire-text p strong { color: var(--navy); }
+  .histoire-stat-box { background: var(--navy); border-radius: 12px; padding: 44px; }
+  .histoire-stat-box h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--accent); margin-bottom: 32px; }
+  .h-stat { margin-bottom: 28px; }
+  .h-stat .num { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--accent); font-weight: 900; line-height: 1; }
+  .h-stat .desc { color: rgba(255,255,255,0.65); font-size: 0.92rem; margin-top: 6px; line-height: 1.5; }
+  .divider-gold { height: 1px; background: rgba(200,169,110,0.25); margin: 24px 0; }
+
+  /* Valeurs */
+  .valeurs { background: var(--off-white); }
+  .valeurs-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 28px; margin-top: 50px; }
+  .valeur-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 32px 28px; position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+  .valeur-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,32,68,0.1); }
+  .valeur-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), transparent); }
+  .valeur-icon { font-size: 2rem; margin-bottom: 18px; }
+  .valeur-card h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 10px; }
+  .valeur-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.65; }
+
+  /* Équipe / Fondateur */
+  .fondateur { background: var(--white); }
+  .fondateur-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; margin-top: 50px; }
+  .fondateur-avatar { background: var(--navy); border-radius: 12px; padding: 48px; text-align: center; }
+  .avatar-initials { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--accent); font-weight: 900; line-height: 1; margin-bottom: 16px; }
+  .avatar-name { color: var(--white); font-weight: 600; font-size: 1.1rem; margin-bottom: 6px; }
+  .avatar-title { color: rgba(255,255,255,0.55); font-size: 0.85rem; line-height: 1.5; }
+  .fondateur-bio h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--navy); margin-bottom: 20px; line-height: 1.3; }
+  .fondateur-bio p { font-size: 0.98rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+  .fondateur-bio p strong { color: var(--navy); }
+  .cite-block { border-left: 3px solid var(--accent); padding-left: 20px; margin: 28px 0; }
+  .cite-block blockquote { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--navy); line-height: 1.5; font-style: italic; }
+
+  /* Timeline */
+  .timeline-section { background: var(--navy); }
+  .timeline-section .section-title { color: var(--white); }
+  .timeline { margin-top: 50px; position: relative; }
+  .timeline::before { content: ''; position: absolute; left: 36px; top: 0; bottom: 0; width: 2px; background: rgba(200,169,110,0.25); }
+  .tl-item { display: flex; gap: 32px; margin-bottom: 40px; position: relative; }
+  .tl-dot { width: 72px; height: 72px; border-radius: 50%; background: rgba(200,169,110,0.12); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Playfair Display', serif; font-size: 0.9rem; font-weight: 700; color: var(--accent); z-index: 1; }
+  .tl-content { padding-top: 16px; }
+  .tl-content h4 { color: var(--white); font-size: 1rem; font-weight: 600; margin-bottom: 6px; }
+  .tl-content p { color: rgba(255,255,255,0.55); font-size: 0.88rem; line-height: 1.65; }
+
+  /* CTA final */
+  .cta-final { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); text-align: center; }
+  .cta-final h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); color: var(--white); margin-bottom: 16px; }
+  .cta-final h2 em { color: var(--accent); font-style: normal; }
+  .cta-final p { color: rgba(255,255,255,0.65); font-size: 1.05rem; margin-bottom: 36px; }
+  .btn-primary { background: var(--accent); color: var(--navy); padding: 16px 36px; border-radius: 4px; font-weight: 700; font-size: 0.95rem; letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; transition: all 0.2s; display: inline-block; }
+  .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,169,110,0.3); }
+
+  footer { background: #080f1e; padding: 40px 5%; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  footer span { color: var(--accent); }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  @media (max-width: 900px) {
+    .histoire-grid, .fondateur-inner { grid-template-columns: 1fr; gap: 40px; }
+    .valeurs-grid { grid-template-columns: 1fr; }
+  }
+
+  /* NAV BLANC FORCÉ */
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 0.88rem; font-weight: 600; color: #ffffff !important; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: #c8a96e !important; }
+  .nav-logo { color: #ffffff !important; }
+  @media(max-width:768px){.nav-links{display:none;}}
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://psv-global.com/a-propos.html">
+  <meta property="og:title" content="À propos — PSV | 35 ans d'expertise en recrutement de vendeurs">
+  <meta property="og:description" content="Découvrez l'histoire du PSV — Profil de Succès en Vente. 35 ans d'expérience en recrutement commercial pour PME québécoises et canadiennes.">
+  <meta property="og:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="PSV — Profil de Succès en Vente">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="À propos — PSV | 35 ans d'expertise en recrutement de vendeurs">
+  <meta name="twitter:description" content="Découvrez l'histoire du PSV — Profil de Succès en Vente. 35 ans d'expérience en recrutement commercial pour PME québécoises et canadiennes.">
+  <meta name="twitter:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+</head>
+<body>
+
+<nav>
+  <a href="https://psv-global.com/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="https://psv-global.com/a-propos.html">À propos</a>
+    <a href="https://psv-global.com/blog.html">Blog</a>
+    <a href="/pages-piliers/">Guides</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="https://psv-global.com/commande.html" class="nav-cta">Évaluer un candidat</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-badge">Notre histoire</div>
+  <h1>35 ans au service du<br><em>recrutement de vendeurs.</em></h1>
+  <p>Le PSV est né d'une conviction simple : les meilleures décisions de recrutement reposent sur des données, pas sur l'intuition.</p>
+</div>
+
+<!-- HISTOIRE -->
+<section class="histoire">
+  <div class="container">
+    <div class="histoire-grid">
+      <div class="histoire-text">
+        <div class="section-label">Notre mission</div>
+        <h2 class="section-title">Éliminer les paris en recrutement commercial</h2>
+        <p>Depuis plus de <strong>35 ans</strong>, nous accompagnons les PME québécoises et canadiennes dans leurs décisions de recrutement en vente. Ce que nous avons appris au fil de centaines de cas réels est sans appel : <strong>l'entrevue ne suffit pas</strong>.</p>
+        <p>Un candidat charismatique peut exceller à se vendre lui-même. Mais ce talent ne prédit pas sa capacité à vendre votre produit, à gérer les objections, à fermer des opportunités ou à bâtir des relations clients durables.</p>
+        <p>Le PSV mesure ce que l'entrevue ne peut pas voir. <strong>13 compétences commerciales</strong> évaluées objectivement, validées sur le terrain pendant des décennies.</p>
+      </div>
+      <div class="histoire-stat-box">
+        <h3>PSV en chiffres</h3>
+        <div class="h-stat">
+          <div class="num">35+</div>
+          <div class="desc">années d'expérience en évaluation de talent commercial</div>
+        </div>
+        <div class="divider-gold"></div>
+        <div class="h-stat">
+          <div class="num">13</div>
+          <div class="desc">compétences commerciales prédictives mesurées individuellement</div>
+        </div>
+        <div class="divider-gold"></div>
+        <div class="h-stat">
+          <div class="num">24h</div>
+          <div class="desc">délai maximum pour recevoir votre rapport complet</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section class="valeurs">
+  <div class="container">
+    <div class="section-label">Nos valeurs</div>
+    <h2 class="section-title">Ce qui guide chaque évaluation</h2>
+    <div class="valeurs-grid">
+      <div class="valeur-card">
+        <div class="valeur-icon">🎯</div>
+        <h4>Objectivité</h4>
+        <p>Chaque score repose sur des données mesurées, jamais sur une impression subjective. Nos évaluations éliminent les biais cognitifs qui faussent les décisions de recrutement.</p>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">🔬</div>
+        <h4>Rigueur scientifique</h4>
+        <p>Le PSV est fondé sur 35 ans de validation terrain. Chaque compétence mesurée a été corrélée à la réussite commerciale réelle sur des centaines de cas documentés.</p>
+      </div>
+      <div class="valeur-card">
+        <div class="valeur-icon">⚡</div>
+        <h4>Clarté actionnable</h4>
+        <p>Un rapport PSV ne vous noie pas dans des données. Il vous donne une décision claire : Go ou No-go. Avec les raisons précises pour agir avec confiance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONDATEUR -->
+<section class="fondateur">
+  <div class="container">
+    <div class="section-label">L'équipe</div>
+    <h2 class="section-title">Une expertise construite sur le terrain</h2>
+    <div class="fondateur-inner">
+      <div class="fondateur-avatar">
+        <div class="avatar-initials">PSV</div>
+        <div class="avatar-name">Profil de Succès en Vente</div>
+        <div class="avatar-title">Développé par des experts<br>en sciences de la vente</div>
+      </div>
+      <div class="fondateur-bio">
+        <h3>Né d'une frustration. Bâti sur l'expérience.</h3>
+        <p>Le PSV a été développé par une équipe multidisciplinaire de chercheurs et praticiens de la vente, spécialisés dans l'évaluation et le développement du talent commercial depuis plus de 35 ans.</p>
+        <p>Après avoir observé des centaines de recrutements en vente — les réussites comme les échecs coûteux — une réalité s'est imposée : <strong>les meilleures entrevues ne prédisent pas la performance commerciale</strong>. Le charme, la préparation et la confiance en soi masquent souvent des lacunes fondamentales en aptitudes de vente.</p>
+        <div class="cite-block">
+          <blockquote>"Ce n'est pas le produit ni la formation qui fait échouer un vendeur. C'est l'absence d'aptitudes que l'entrevue n'a pas pu détecter."</blockquote>
+        </div>
+        <p>Le PSV a été conçu pour combler ce manque. Un outil rigoureux, rapide et accessible — pensé pour les PME qui n'ont pas les ressources d'une grande entreprise, mais qui ne peuvent pas se permettre une mauvaise embauche.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <div class="section-label" style="background:rgba(200,169,110,0.15);border-color:rgba(200,169,110,0.3);">Notre parcours</div>
+    <h2 class="section-title">35 ans de développement et de validation</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot">1990</div>
+        <div class="tl-content">
+          <h4>Les premières évaluations</h4>
+          <p>Une équipe multidisciplinaire de chercheurs et praticiens de la vente commence à documenter les corrélations entre les aptitudes mesurées et la performance réelle des vendeurs en PME québécoises.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2000</div>
+        <div class="tl-content">
+          <h4>Identification des 13 compétences clés</h4>
+          <p>Après une décennie de données terrain, les 13 compétences commerciales prédictives sont identifiées et validées sur des centaines de profils documentés.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2010</div>
+        <div class="tl-content">
+          <h4>Développement du rapport décisionnel</h4>
+          <p>Le format du rapport PSV est perfectionné pour livrer non seulement des scores, mais des recommandations actionnables pour chaque poste commercial.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2014</div>
+        <div class="tl-content">
+          <h4>Lancement de psv-global.com</h4>
+          <p>Le PSV devient accessible en ligne à toutes les PME canadiennes — résultats en moins de 24 heures, à partir de 125 $ par candidat.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Prêt à recruter avec <em>certitude</em> ?</h2>
+    <p>Rejoignez les centaines de PME québécoises qui ont arrêté de deviner.</p>
+    <a class="btn-primary" href="/commande.html">Évaluer un candidat — 125 $</a>
+    <p style="margin-top:16px;font-size:0.82rem;color:rgba(255,255,255,0.35);">Résultats en moins de 24h · Questions : <a href="mailto:evaluation@psv-global.com" style="color:rgba(200,169,110,0.7);">evaluation@psv-global.com</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>PSV — Profil de Succès en Vente</span>. Tous droits réservés. · <a href="https://psv-global.com/">Accueil</a> · <a href="https://psv-global.com/a-propos.html">À propos</a> · <a href="/pages-piliers/">Guides</a> · <a href="https://psv-global.com/blog.html">Blog</a></p>
+</footer>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+</script>
+<script src="/chatbot.js"></script>

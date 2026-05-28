@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le vrai coût d'une mauvaise embauche en vente | PSV</title>
+<meta name="description" content="Une erreur de recrutement en vente coûte 2 à 3 fois le salaire annuel du poste. Calculez votre exposition réelle et découvrez les 5 signaux d'alarme à repérer dès l'entrevue.">
+<link rel="canonical" href="https://psv-global.com/blog/cout-mauvaise-embauche-vente">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --navy:#0f2044;--navy-mid:#1a3260;--accent:#c8a96e;--accent-light:#e8c98e;--white:#ffffff;--off-white:#f8f6f1;--text:#1c1c1c;--text-muted:#5a6070;--red:#c0392b;--border:rgba(15,32,68,0.12); }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--off-white);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:rgba(15,32,68,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,0.2);}
+  .nav-logo{font-family:'Playfair Display',serif;color:#ffffff !important;font-size:1.4rem;font-weight:700;letter-spacing:0.04em;text-decoration:none;}
+  .nav-logo span{color:var(--accent);}
+  .nav-cta{background:var(--accent);color:var(--navy);padding:10px 24px;border-radius:4px;font-weight:600;font-size:0.85rem;text-decoration:none;text-transform:uppercase;}
+  .article-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 55%,#162d5a 100%);padding:140px 5% 80px;position:relative;overflow:hidden;}
+  .article-hero::before{content:'';position:absolute;top:-20%;right:-10%;width:70vw;height:70vw;max-width:900px;background:radial-gradient(circle,rgba(200,169,110,0.08) 0%,transparent 70%);border-radius:50%;}
+  .hero-inner{max-width:800px;margin:0 auto;}
+  .article-category{display:inline-block;background:rgba(200,169,110,0.15);border:1px solid rgba(200,169,110,0.4);color:var(--accent);font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:20px;margin-bottom:24px;text-decoration:none;}
+  .article-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--white);line-height:1.15;margin-bottom:24px;font-weight:900;}
+  .article-hero h1 em{color:var(--accent);font-style:normal;}
+  .article-meta{display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+  .meta-item{color:rgba(255,255,255,0.55);font-size:0.85rem;}
+  .meta-dot{width:4px;height:4px;border-radius:50%;background:rgba(200,169,110,0.5);}
+  .article-body{max-width:800px;margin:0 auto;padding:70px 5%;}
+  .article-body p{font-size:1.05rem;line-height:1.85;color:var(--text);margin-bottom:24px;}
+  .article-body h2{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin:48px 0 20px;font-weight:700;line-height:1.2;}
+  .article-body h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin:32px 0 14px;font-weight:700;}
+  .article-body strong{color:var(--navy);font-weight:600;}
+  .article-body ul,.article-body ol{margin:0 0 24px 24px;}
+  .article-body li{font-size:1.05rem;line-height:1.8;color:var(--text);margin-bottom:8px;}
+  .cout-table{width:100%;border-collapse:collapse;margin:32px 0;border-radius:12px;overflow:hidden;}
+  .cout-table th{background:var(--navy);color:var(--accent);font-size:0.82rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:14px 18px;text-align:left;}
+  .cout-table td{padding:14px 18px;font-size:0.95rem;border-bottom:1px solid var(--border);background:var(--white);}
+  .cout-table tr:last-child td{border-bottom:none;background:#FFFBF0;font-weight:700;color:var(--navy);}
+  .cout-table .amount{text-align:right;font-family:'Playfair Display',serif;font-weight:700;color:var(--red);}
+  .cout-table .total-amount{text-align:right;font-family:'Playfair Display',serif;font-weight:900;font-size:1.2rem;color:var(--red);}
+  .signal-list{display:flex;flex-direction:column;gap:16px;margin:32px 0;}
+  .signal-item{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:24px;display:flex;gap:20px;align-items:flex-start;}
+  .signal-num{width:36px;height:36px;border-radius:50%;background:rgba(192,57,43,0.1);border:1px solid rgba(192,57,43,0.3);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-weight:700;color:var(--red);flex-shrink:0;font-size:0.9rem;}
+  .signal-item h4{font-size:0.98rem;font-weight:600;color:var(--navy);margin-bottom:6px;}
+  .signal-item p{font-size:0.88rem;color:var(--text-muted);line-height:1.6;margin:0;}
+  .highlight-box{background:rgba(200,169,110,0.08);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;padding:24px 28px;margin:32px 0;}
+  .highlight-box p{margin:0;font-size:1rem;color:var(--navy);font-style:italic;}
+  .stat-callout{background:var(--navy);border-radius:12px;padding:36px 40px;margin:40px 0;display:flex;gap:32px;align-items:center;}
+  .stat-num{font-family:'Playfair Display',serif;font-size:4rem;color:var(--accent);font-weight:900;line-height:1;flex-shrink:0;}
+  .stat-text{color:rgba(255,255,255,0.75);font-size:1rem;line-height:1.65;}
+  .stat-text strong{color:var(--white);}
+  .cta-article{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);border-radius:16px;padding:48px;text-align:center;margin:60px 0;}
+  .cta-article h3{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--white);margin-bottom:14px;}
+  .cta-article h3 em{color:var(--accent);font-style:normal;}
+  .cta-article p{color:rgba(255,255,255,0.65);margin-bottom:28px;}
+  .btn-primary{background:var(--accent);color:var(--navy);padding:15px 36px;border-radius:4px;font-weight:700;font-size:0.92rem;letter-spacing:0.04em;text-decoration:none;text-transform:uppercase;display:inline-block;}
+  .articles-related{background:var(--white);border-top:1px solid var(--border);padding:60px 5%;}
+  .articles-related-inner{max-width:800px;margin:0 auto;}
+  .related-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin-bottom:28px;}
+  .related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+  .related-card{background:var(--off-white);border:1px solid var(--border);border-radius:10px;padding:24px;text-decoration:none;display:block;transition:all 0.2s;}
+  .related-card:hover{border-color:var(--accent);}
+  .related-tag{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+  .related-card h4{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);line-height:1.35;}
+  footer{background:#080f1e;padding:40px 5%;text-align:center;color:rgba(255,255,255,0.35);font-size:0.82rem;}
+  footer span{color:var(--accent);}
+  footer a{color:rgba(255,255,255,0.4);text-decoration:none;}
+  @media(max-width:700px){.stat-callout{flex-direction:column;}.related-grid{grid-template-columns:1fr;}}
+
+  /* NAV BLANC FORCÉ */
+  .nav-links a { color: #ffffff !important; font-weight: 600; }
+  .nav-links a:hover { color: #c8a96e !important; }
+  .nav-logo { color: #ffffff !important; }
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://psv-global.com/blog/cout-mauvaise-embauche-vente">
+  <meta property="og:title" content="Le vrai coût d'une mauvaise embauche en vente | PSV">
+  <meta property="og:description" content="Une erreur de recrutement en vente coûte 2 à 3 fois le salaire annuel du poste. Calculez votre exposition réelle et découvrez les 5 signaux d'alarme.">
+  <meta property="og:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="PSV — Profil de Succès en Vente">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le vrai coût d'une mauvaise embauche en vente | PSV">
+  <meta name="twitter:description" content="Une erreur de recrutement en vente coûte 2 à 3 fois le salaire annuel du poste. Calculez votre exposition réelle et découvrez les 5 signaux d'alarme.">
+  <meta name="twitter:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+</head>
+<body>
+
+<nav>
+  <a href="https://psv-global.com/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="https://psv-global.com/a-propos.html">À propos</a>
+    <a href="https://psv-global.com/blog.html">Blog</a>
+    <a href="/pages-piliers/">Guides</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="https://psv-global.com/commande.html" class="nav-cta">Évaluer un candidat</a>
+</nav>
+
+<div class="article-hero">
+  <div class="hero-inner">
+    <a href="https://psv-global.com/blog.html" class="article-category">← Retour au blog</a>
+    <h1>Le vrai coût d'une mauvaise embauche en vente — <em>et comment l'éviter</em></h1>
+    <div class="article-meta">
+      <span class="meta-item">Gestion</span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">6 min de lecture</span>
+      <span class="meta-dot"></span>
+      <span class="meta-item">Avril 2026</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-body">
+
+  <p>Quand un recrutement en vente tourne mal, la plupart des gestionnaires calculent la perte en termes de salaire versé. C'est une erreur. Le salaire n'est que la partie visible d'un iceberg financier beaucoup plus imposant.</p>
+
+  <p>La Harvard Business Review estime que le coût réel d'une mauvaise embauche en vente représente <strong>2 à 3 fois le salaire annuel du poste</strong>. Pour un vendeur à 75 000 $ par année, ça représente entre 150 000 $ et 225 000 $ en coûts totaux. La plupart des entreprises ne s'en rendent compte qu'une fois la décision prise — trop tard.</p>
+
+  <div class="stat-callout">
+    <div class="stat-num">2–3×</div>
+    <div class="stat-text"><strong>le salaire annuel du poste</strong> — c'est le coût réel d'une erreur de recrutement en vente selon la Harvard Business Review. Pour une PME, c'est souvent la différence entre une année rentable et une année difficile.</div>
+  </div>
+
+  <h2>Décortiquons les coûts réels</h2>
+
+  <p>Prenons un exemple concret : un poste de représentant des ventes avec un salaire de 70 000 $, un quota annuel de 250 000 $ et une marge nette de 15 %. L'entreprise réalise l'erreur après 5 mois.</p>
+
+  <table class="cout-table">
+    <thead>
+      <tr>
+        <th>Poste de coût</th>
+        <th>Calcul</th>
+        <th class="amount">Montant estimé</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Salaire versé sans retour</td>
+        <td>70 000 $ × 5/12 mois</td>
+        <td class="amount">29 167 $</td>
+      </tr>
+      <tr>
+        <td>Avantages sociaux (~16 %)</td>
+        <td>29 167 $ × 16 %</td>
+        <td class="amount">4 667 $</td>
+      </tr>
+      <tr>
+        <td>Recrutement + redémarrage</td>
+        <td>Affichage, entrevues, intégration</td>
+        <td class="amount">10 000 $</td>
+      </tr>
+      <tr>
+        <td>Formation + gestion accrue</td>
+        <td>Temps gestionnaire, formation</td>
+        <td class="amount">9 000 $</td>
+      </tr>
+      <tr>
+        <td>Clients perdus (18 % des ventes manquées)</td>
+        <td>Attrition, relations dégradées</td>
+        <td class="amount">15 625 $</td>
+      </tr>
+      <tr>
+        <td><strong>Total coûts directs</strong></td>
+        <td></td>
+        <td class="total-amount">68 459 $</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Et ce tableau n'inclut pas les <strong>profits nets évaporés</strong> : les ventes que vous auriez dû faire si le poste avait été bien pourvu. Sur 5 mois avec un quota de 250 000 $ et un taux d'atteinte de 30 %, les ventes perdues représentent environ 72 917 $ — soit des profits nets de 10 938 $ à 15 % de marge.</p>
+
+  <p>Total réel : <strong>plus de 79 000 $</strong> pour une erreur détectée après 5 mois sur un poste à 70 000 $.</p>
+
+  <h2>Les 5 signaux d'alarme à repérer dès l'entrevue</h2>
+
+  <p>Certains indicateurs permettent de détecter une mauvaise adéquation avant même d'avoir fait l'offre. Voici les 5 plus révélateurs :</p>
+
+  <div class="signal-list">
+    <div class="signal-item">
+      <div class="signal-num">1</div>
+      <div>
+        <h4>Le candidat ne pose pas de questions sur les objectifs</h4>
+        <p>Un vendeur performant veut savoir exactement ce qu'on attend de lui. S'il ne demande pas quels sont les quotas, le cycle de vente ou les KPIs, c'est un signal que la performance ne l'obsède pas vraiment.</p>
+      </div>
+    </div>
+    <div class="signal-item">
+      <div class="signal-num">2</div>
+      <div>
+        <h4>Les succès passés restent vagues</h4>
+        <p>Un bon vendeur se souvient précisément de ses chiffres. « J'ai dépassé mes objectifs » sans pouvoir citer le quota exact, le taux d'atteinte ou les revenus générés indique soit une mémoire sélective, soit des résultats moins brillants qu'annoncés.</p>
+      </div>
+    </div>
+    <div class="signal-item">
+      <div class="signal-num">3</div>
+      <div>
+        <h4>Il attribue ses échecs à des facteurs externes</h4>
+        <p>Le marché, l'économie, les produits, le soutien marketing... Tout le monde sauf lui. Un vendeur performant comprend sa part de responsabilité dans les résultats, bons ou mauvais.</p>
+      </div>
+    </div>
+    <div class="signal-item">
+      <div class="signal-num">4</div>
+      <div>
+        <h4>Il parle plus de ses relations que de ses résultats</h4>
+        <p>Les relations clients sont importantes — mais elles ne paient pas les factures. Un candidat qui ne parle que d'entretenir des relations sans mentionner de conversions, de nouveaux comptes ou de croissance de revenus est probablement un cultivateur dans un monde qui demande un chasseur.</p>
+      </div>
+    </div>
+    <div class="signal-item">
+      <div class="signal-num">5</div>
+      <div>
+        <h4>Il ne demande pas à conclure l'entrevue</h4>
+        <p>C'est le test le plus simple et le plus fiable. Un vendeur instinctif cherche naturellement à obtenir la prochaine étape. S'il repart sans demander quelle est la suite du processus, sans exprimer son intérêt clairement, demandez-vous s'il fermera vraiment vos ventes.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>La solution : séparer l'évaluation de la sélection</h2>
+
+  <p>Ces signaux sont utiles, mais ils restent subjectifs. Un candidat habile peut les contourner facilement. La vraie protection contre une mauvaise embauche n'est pas d'observer plus attentivement — c'est de mesurer objectivement.</p>
+
+  <div class="highlight-box">
+    <p>« Une évaluation à 125 $ qui prend 60 minutes peut vous épargner 80 000 $ de pertes et 12 mois de frustration. C'est le meilleur retour sur investissement en recrutement. »</p>
+  </div>
+
+  <p>Le PSV mesure objectivement les 13 aptitudes commerciales qui prédisent la réussite en vente. Il compare également l'auto-évaluation du candidat à ses résultats réels — révélant l'écart entre ce qu'il croit être et ce qu'il est réellement.</p>
+
+  <p>En moins de 24 heures, vous avez un portrait complet : forces réelles, zones à risque, recommandations concrètes. Pas une impression. Des données.</p>
+
+  <div class="cta-article">
+    <h3>Calculez votre exposition réelle<br><em>avant votre prochain recrutement.</em></h3>
+    <p>Utilisez notre calculateur gratuit ou évaluez votre prochain candidat dès maintenant.</p>
+    <a href="https://psv-global.com/commande.html" class="btn-primary">Évaluer un candidat — 125 $ →</a>
+  </div>
+
+</div>
+
+<div class="articles-related">
+  <div class="articles-related-inner">
+    <h2 class="related-title">Articles connexes</h2>
+    <div class="related-grid">
+      <a href="https://psv-global.com/blog/pourquoi-vendeurs-ratent-objectifs" class="related-card">
+        <div class="related-tag">Recrutement</div>
+        <h4>Pourquoi 80 % des vendeurs ratent leurs objectifs la première année</h4>
+      </a>
+      <a href="https://psv-global.com/blog/biais-entrevue-recrutement" class="related-card">
+        <div class="related-tag">Recrutement</div>
+        <h4>L'entrevue vous ment : 7 biais qui faussent votre jugement</h4>
+      </a>
+      <a href="https://psv-global.com/blog/13-competences-reussite-vente" class="related-card">
+        <div class="related-tag">Évaluation</div>
+        <h4>Les 13 compétences qui prédisent la réussite en vente</h4>
+      </a>
+      <a href="https://psv-global.com/blog/etude-cas-pme-embauche-evitee" class="related-card">
+        <div class="related-tag">Cas réel</div>
+        <h4>Étude de cas : comment une PME a évité une embauche à 85 000 $</h4>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 <span>PSV — Profil de Succès en Vente</span>. Tous droits réservés. · <a href="https://psv-global.com/">Accueil</a> · <a href="https://psv-global.com/a-propos.html">À propos</a> · <a href="/pages-piliers/">Guides</a> · <a href="https://psv-global.com/blog.html">Blog</a></p>
+</footer>
+</body>
+</html>

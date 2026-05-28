@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recruter de meilleurs vendeurs — PSV Global</title>
+<meta name="description" content="Le PSV aide les entreprises à réduire les risques liés à l'embauche en évaluant les comportements commerciaux des candidats avant de décider — pas seulement leur expérience sur le CV.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0f2044;--navy-mid:#1a3260;--accent:#c8a96e;--accent-light:#e8c98e;
+  --white:#fff;--off:#f8f6f1;--text:#1c1c1c;--muted:#5a6070;
+  --border:rgba(15,32,68,.12);--soft:#eef3fb;--shadow:0 18px 45px rgba(15,32,68,.12)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',Aptos,Arial,sans-serif;background:var(--off);color:var(--text);line-height:1.68}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:rgba(15,32,68,.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(200,169,110,.2)}
+.nav-logo{font-family:'Playfair Display',Georgia,serif;color:#fff!important;font-size:1.4rem;font-weight:700;letter-spacing:.04em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:.88rem;font-weight:600;color:rgba(255,255,255,.7)!important;letter-spacing:.02em}
+.nav-links a:hover{color:var(--accent)!important}
+.nav-links a.active{color:#fff!important}
+.nav-cta{background:var(--accent);color:var(--navy)!important;padding:10px 24px;border-radius:4px;font-weight:800;font-size:.82rem;letter-spacing:.05em;text-transform:uppercase}
+
+/* HERO — légèrement différencié de l'Univers 1 */
+.hero{background:radial-gradient(circle at bottom left,rgba(200,169,110,.1),transparent 40%),linear-gradient(150deg,#0d1c3a,var(--navy) 40%,var(--navy-mid));color:#fff;padding:150px 5% 100px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;bottom:-15%;left:-5%;width:60vw;height:60vw;max-width:800px;background:radial-gradient(circle,rgba(200,169,110,.06),transparent 70%);border-radius:50%}
+.inner{position:relative;max-width:1180px;margin:0 auto;z-index:1}
+.eyebrow{display:inline-block;background:rgba(200,169,110,.15);border:1px solid rgba(200,169,110,.4);color:var(--accent);font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 15px;border-radius:20px;margin-bottom:24px}
+h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.05;letter-spacing:-.04em;margin-bottom:24px}
+h1 em,h2 em{color:var(--accent);font-style:normal}
+.lead{font-size:1.14rem;line-height:1.8;color:rgba(255,255,255,.8);max-width:780px;margin-bottom:36px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;border-radius:4px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;font-size:.9rem}
+.btn-primary{background:var(--accent);color:var(--navy)}
+.btn-secondary{border:1px solid rgba(255,255,255,.28);color:#fff;background:rgba(255,255,255,.06)}
+
+/* BANDEAU SECONDAIRE — signal de position */
+.secondary-banner{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px 22px;margin-top:36px;display:inline-flex;align-items:center;gap:12px;font-size:.88rem;color:rgba(255,255,255,.6)}
+.secondary-banner strong{color:rgba(255,255,255,.9)}
+.secondary-banner a{color:var(--accent);font-weight:700;border-bottom:1px solid rgba(200,169,110,.4)}
+
+/* SECTIONS */
+section{padding:80px 5%}
+.section-inner{max-width:1180px;margin:0 auto}
+.kicker{color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-weight:800;font-size:.76rem;margin-bottom:12px}
+h2{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;letter-spacing:-.035em;margin-bottom:18px}
+.section-p{color:var(--muted);font-size:1.08rem;max-width:850px;line-height:1.8}
+.soft{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+
+/* GRILLE ARTICLES */
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.article-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 6px 22px rgba(15,32,68,.04);transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column;gap:10px}
+.article-card:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(15,32,68,.1)}
+.article-tag{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent)}
+.article-card h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.18rem;line-height:1.3}
+.article-card p{color:var(--muted);font-size:.96rem;flex:1}
+.article-arrow{color:var(--accent);font-size:.85rem;font-weight:700;margin-top:4px}
+
+/* PROBLÈMES RECRUTEMENT */
+.problemes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.probleme-card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:28px}
+.probleme-num{font-family:'Playfair Display',Georgia,serif;font-size:2.8rem;color:var(--accent);opacity:.35;line-height:1;margin-bottom:10px}
+.probleme-card h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.2rem;margin-bottom:10px;line-height:1.3}
+.probleme-card p{color:var(--muted);font-size:.97rem;line-height:1.75}
+
+/* PARCOURS RECRUTEMENT */
+.etapes{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px;position:relative}
+.etapes:before{content:"";position:absolute;top:28px;left:10%;right:10%;height:2px;background:linear-gradient(to right,var(--accent),rgba(200,169,110,.2));z-index:0}
+.etape{background:#fff;border:1px solid var(--border);border-radius:18px;padding:26px;position:relative;z-index:1;text-align:center}
+.etape-num{width:56px;height:56px;border-radius:50%;background:var(--navy);color:var(--accent);font-family:'Playfair Display',Georgia,serif;font-size:1.3rem;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;border:2px solid var(--accent)}
+.etape h4{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.1rem;margin-bottom:10px;line-height:1.3}
+.etape p{color:var(--muted);font-size:.92rem;line-height:1.65}
+
+/* BLOC COÛT */
+.deux-col{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.cout-card{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:28px;padding:44px;color:#fff;box-shadow:var(--shadow)}
+.cout-card h3{font-family:'Playfair Display',Georgia,serif;font-size:1.9rem;margin-bottom:16px}
+.cout-card p{color:rgba(255,255,255,.75);margin-bottom:22px;line-height:1.8}
+.montant-highlight{font-family:'Playfair Display',Georgia,serif;font-size:3.2rem;color:var(--accent);line-height:1;margin:20px 0 6px}
+.montant-label{color:rgba(255,255,255,.5);font-size:.82rem;margin-bottom:28px}
+.step-link{color:var(--navy);font-weight:700;font-size:.9rem;border-bottom:2px solid var(--accent);padding-bottom:2px;display:inline-block}
+.step-link:hover{color:var(--accent)}
+
+/* CE QUE PSV RÉVÈLE */
+.reveal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}
+.reveal-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px}
+.reveal-icon{font-size:1.6rem;margin-bottom:14px}
+.reveal-card h4{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.15rem;margin-bottom:10px}
+.reveal-card p{color:var(--muted);font-size:.95rem;line-height:1.7}
+
+/* PONT VERS UNIVERS 1 */
+.bridge{background:linear-gradient(135deg,rgba(15,32,68,.05),rgba(15,32,68,.02));border-radius:24px;padding:40px;border:1px solid var(--border);display:flex;align-items:center;gap:34px;margin-top:48px}
+.bridge-text h3{font-family:'Playfair Display',Georgia,serif;color:var(--navy);font-size:1.5rem;margin-bottom:10px}
+.bridge-text p{color:var(--muted);font-size:.98rem;line-height:1.75}
+.bridge-cta{flex-shrink:0}
+.btn-outline{border:2px solid var(--navy);color:var(--navy);padding:12px 26px;border-radius:4px;font-weight:800;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;display:inline-block;white-space:nowrap}
+.btn-outline:hover{background:var(--navy);color:#fff}
+
+/* FINAL */
+.final{background:linear-gradient(135deg,var(--navy),var(--navy-mid));color:#fff;text-align:center;padding:90px 5%}
+.final h2{color:#fff;max-width:900px;margin:0 auto 20px}
+.final p{color:rgba(255,255,255,.75);max-width:720px;margin:0 auto 34px;font-size:1.08rem;line-height:1.8}
+
+footer{background:#080f1e;padding:40px 5%;text-align:center;color:rgba(255,255,255,.35);font-size:.82rem}
+footer span{color:var(--accent)}
+
+@media(max-width:980px){
+  .deux-col{grid-template-columns:1fr}
+  .etapes{grid-template-columns:1fr 1fr}
+  .etapes:before{display:none}
+  .bridge{flex-direction:column;text-align:center}
+}
+@media(max-width:720px){
+  .nav-links{display:none}
+  .hero{padding-top:125px}
+  .articles-grid,.problemes-grid,.reveal-grid{grid-template-columns:1fr}
+  .etapes{grid-template-columns:1fr}
+  .btns{flex-direction:column}.btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="/equipes-de-vente/">Performance des équipes de vente</a>
+    <a href="/recrutement-vente/" class="active">Vous recrutez ?</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="/commande/" class="nav-cta">Évaluer un candidat</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="inner">
+    <div class="eyebrow">Recrutement · Évaluation · Réduction des risques</div>
+    <h1>Ce que le CV ne vous dira<br>jamais sur votre prochain <em>vendeur</em>.</h1>
+    <p class="lead">L'expérience passée d'un candidat ne prédit pas ses comportements commerciaux dans votre contexte. Le PSV aide les entreprises à évaluer ce qui compte vraiment avant l'embauche — et à éviter les décisions coûteuses basées sur de bonnes entrevues.</p>
+    <div class="btns">
+      <a href="/commande/" class="btn btn-primary">Évaluer un candidat</a>
+      <a href="/blog/pourquoi-cv-trompeurs-vente/" class="btn btn-secondary">Pourquoi les CV sont trompeurs</a>
+    </div>
+    <div class="secondary-banner">
+      <span>Vous avez déjà une équipe en place ?</span>
+      <a href="/equipes-de-vente/">Le PSV est avant tout un outil de développement des équipes →</a>
+    </div>
+  </div>
+</header>
+
+<!-- POURQUOI LE RECRUTEMENT ÉCHOUE -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Les vrais risques du recrutement vente</div>
+    <h2>Pourquoi les bonnes entrevues<br>mènent parfois aux <em>mauvaises embauches</em>.</h2>
+    <p class="section-p">Le processus d'embauche traditionnel est mal adapté à la vente. Les candidats savent se vendre en entrevue — c'est leur métier. Mais ce talent de présentation ne dit rien de leur discipline, de leur résilience ou de leur capacité à prospecter dans la réalité de votre terrain.</p>
+    <div class="problemes-grid">
+      <div class="probleme-card">
+        <div class="probleme-num">01</div>
+        <h3>L'entrevue mesure la performance en entrevue</h3>
+        <p>Un bon vendeur sait se présenter. Le charisme, la fluidité verbale et les anecdotes de succès passé peuvent masquer des faiblesses comportementales réelles.</p>
+      </div>
+      <div class="probleme-card">
+        <div class="probleme-num">02</div>
+        <h3>Le CV raconte une histoire, pas des comportements</h3>
+        <p>Les titres, les chiffres et les employeurs précédents ne disent rien sur la discipline quotidienne, la gestion du refus ou la volonté de prospecter activement.</p>
+      </div>
+      <div class="probleme-card">
+        <div class="probleme-num">03</div>
+        <h3>Les biais de l'entrevue sont puissants et invisibles</h3>
+        <p>L'effet de halo, la sympathie, la confiance en soi d'un candidat — ces biais influencent la décision bien plus que les gestionnaires ne le réalisent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS RECRUTEMENT -->
+<section class="soft">
+  <div class="section-inner">
+    <div class="kicker">Comment le PSV s'intègre dans votre processus</div>
+    <h2>Structurer l'évaluation <em>avant</em> de décider.</h2>
+    <p class="section-p">Le PSV ne remplace pas le processus d'embauche — il l'enrichit en ajoutant une lecture structurée des comportements commerciaux à un moment où l'intuition seule peut être trompeuse.</p>
+    <div class="etapes">
+      <div class="etape">
+        <div class="etape-num">1</div>
+        <h4>Identifier les candidats prometteurs</h4>
+        <p>CV et entrevue initiale. Le PSV vient ici en complément, pas en remplacement.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-num">2</div>
+        <h4>Faire compléter le PSV</h4>
+        <p>Le candidat répond au questionnaire structuré. Simple, rapide, indépendant de vous.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-num">3</div>
+        <h4>Lire le profil comportemental</h4>
+        <p>Comprendre les forces, les zones de risque et les comportements commerciaux clés.</p>
+      </div>
+      <div class="etape">
+        <div class="etape-num">4</div>
+        <h4>Décider avec plus de recul</h4>
+        <p>Comparer les candidats sur des bases plus objectives que l'impression générale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE RÉVÈLE LE PSV EN RECRUTEMENT -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Ce que le PSV révèle</div>
+    <h2>13 domaines commerciaux<br>que l'entrevue ne mesure pas.</h2>
+    <p class="section-p">Le PSV évalue les aptitudes directement liées à la performance en vente. Pour chaque candidat, vous obtenez une lecture structurée sur ces 13 domaines — pas une impression, pas une intuition.</p>
+    <div class="reveal-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="reveal-card">
+        <div class="reveal-icon">🤝</div>
+        <h4>Approche &amp; contact</h4>
+        <p>Va-t-il créer une bonne première impression et établir un lien de confiance rapidement ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🔍</div>
+        <h4>Découverte des besoins</h4>
+        <p>Pose-t-il les bonnes questions, ou présente-t-il son produit avant même de comprendre le client ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">💡</div>
+        <h4>Présentation de la solution</h4>
+        <p>Sait-il démontrer la valeur en lien avec les priorités du client, pas juste les caractéristiques du produit ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🛡️</div>
+        <h4>Gestion des objections</h4>
+        <p>Va-t-il abandonner à la première résistance ou naviguer les objections avec calme et assurance ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">⚖️</div>
+        <h4>Négociation</h4>
+        <p>Sait-il défendre la valeur et atteindre des ententes gagnant-gagnant sans brader sa marge ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🎯</div>
+        <h4>Conclusion de la vente</h4>
+        <p>A-t-il la capacité de déclencher la décision, ou laisse-t-il les dossiers traîner indéfiniment ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🔄</div>
+        <h4>Suivi &amp; fidélisation</h4>
+        <p>Va-t-il entretenir la relation et générer des ventes additionnelles, ou passer au prochain prospect ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">⏱️</div>
+        <h4>Gestion du temps</h4>
+        <p>Est-il organisé et rigoureux dans sa planification quotidienne, ou réactif et peu structuré ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🗺️</div>
+        <h4>Planification de territoire</h4>
+        <p>Sait-il structurer et cibler son portefeuille de façon optimale, ou court-il partout sans priorités ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">📞</div>
+        <h4>Prospection</h4>
+        <p>Va-t-il créer activement de nouvelles opportunités, ou attendre les inbound et les références ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">👂</div>
+        <h4>Écoute active</h4>
+        <p>Écoute-t-il pour comprendre ou pour répondre ? Une distinction déterminante en vente consultative.</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">🔀</div>
+        <h4>Créativité &amp; adaptabilité</h4>
+        <p>Sait-il s'ajuster quand le contexte change, ou reste-t-il figé dans ses habitudes ?</p>
+      </div>
+      <div class="reveal-card">
+        <div class="reveal-icon">⭐</div>
+        <h4>Professionnalisme</h4>
+        <p>Son éthique, son image et sa crédibilité perçue reflètent-ils les standards de votre entreprise ?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COÛT MAUVAISE EMBAUCHE -->
+<section class="soft">
+  <div class="section-inner deux-col">
+    <div>
+      <div class="kicker">Le risque financier</div>
+      <h2>Une mauvaise embauche en vente,<br>c'est <em>beaucoup plus cher</em> qu'on pense.</h2>
+      <p class="section-p">Salaire, formation, temps de gestion, opportunités manquées, coût du recrutement suivant — les estimations varient, mais l'ordre de grandeur est toujours surprenant pour ceux qui ne l'ont pas calculé.</p>
+      <div style="margin-top:28px;display:flex;flex-direction:column;gap:14px">
+        <a href="/le-vrai-cout-dune-mauvaise-embauche-en-vente/" class="step-link">Lire l'analyse complète des coûts →</a>
+        <a href="/blog/etude-cas-pme-embauche-evitee/" class="step-link">Étude de cas : une embauche évitée à 85 000 $ →</a>
+        <a href="https://psv-calculateur-mai-2026.netlify.app/" class="step-link">Calculer pour votre situation →</a>
+      </div>
+    </div>
+    <div class="cout-card">
+      <h3>Le vrai coût moyen d'une mauvaise embauche</h3>
+      <div class="montant-highlight">85 000 $</div>
+      <div class="montant-label">estimation du coût moyen total d'une mauvaise embauche en vente (salaire + formation + coûts indirects)</div>
+      <p>Pour 125 $, le PSV permet de mieux évaluer un candidat avant de prendre une décision qui engage souvent entre 60 000 $ et 120 000 $ en coûts directs et indirects.</p>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:4px">
+        <a href="https://psv-calculateur-mai-2026.netlify.app/" class="btn btn-primary">Calculez votre coût réel</a>
+        <a href="/commande/" style="color:rgba(255,255,255,.6);font-size:.85rem;text-align:center;border-bottom:1px solid rgba(255,255,255,.2);padding-bottom:2px;display:inline-block;margin:0 auto">Évaluer un candidat — 125 $ →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLES BLOG UNIVERS 2 -->
+<section>
+  <div class="section-inner">
+    <div class="kicker">Guides et ressources — Recrutement vente</div>
+    <h2>Mieux recruter commence par<br>mieux <em>comprendre le problème</em>.</h2>
+    <p class="section-p">Des analyses concrètes sur les angles morts du recrutement vente et comment les réduire avant de prendre une décision d'embauche.</p>
+    <div class="articles-grid">
+      <a href="/comment-recruter-un-bon-vendeur/" class="article-card">
+        <div class="article-tag">Guide principal</div>
+        <h3>Comment recruter un bon vendeur</h3>
+        <p>Les éléments les plus souvent négligés dans un processus d'embauche en vente.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/pourquoi-cv-trompeurs-vente/" class="article-card">
+        <div class="article-tag">CV & expérience</div>
+        <h3>Pourquoi les CV sont trompeurs en vente</h3>
+        <p>L'expérience passée ne prédit pas les comportements futurs dans votre contexte.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/biais-entrevue-recrutement/" class="article-card">
+        <div class="article-tag">Biais</div>
+        <h3>Les biais qui faussent votre jugement en entrevue</h3>
+        <p>Sept biais cognitifs qui influencent les décisions d'embauche sans qu'on s'en rende compte.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/reduire-risque-mauvaise-embauche-vente/" class="article-card">
+        <div class="article-tag">Risque</div>
+        <h3>Comment réduire le risque d'une mauvaise embauche</h3>
+        <p>Les mesures concrètes pour mieux structurer les décisions d'embauche en vente.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/pourquoi-entrevues-echouent-vente/" class="article-card">
+        <div class="article-tag">Entrevues</div>
+        <h3>Pourquoi les entrevues échouent souvent en vente</h3>
+        <p>Les limites structurelles du processus d'entrevue standard appliqué au recrutement vente.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/reconnaitre-vrai-vendeur-entrevue/" class="article-card">
+        <div class="article-tag">Entrevues</div>
+        <h3>Comment reconnaître un vrai vendeur en entrevue</h3>
+        <p>Les signaux comportementaux qui distinguent les bons vendeurs des bons candidats.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/etude-cas-pme-embauche-evitee/" class="article-card">
+        <div class="article-tag">Étude de cas</div>
+        <h3>Comment une PME a évité une embauche à 85 000 $</h3>
+        <p>Un cas concret où l'évaluation PSV a changé une décision d'embauche avant qu'il soit trop tard.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/signes-vendeur-risque-ne-pas-performer/" class="article-card">
+        <div class="article-tag">Signaux</div>
+        <h3>Les signes qu'un vendeur risque de ne pas performer</h3>
+        <p>Comment repérer les comportements à risque avant l'embauche, pas après.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+      <a href="/blog/pourquoi-vendeurs-echouent-apres-embauche/" class="article-card">
+        <div class="article-tag">Post-embauche</div>
+        <h3>Pourquoi les vendeurs échouent après l'embauche</h3>
+        <p>Les raisons réelles derrière les échecs post-embauche — et comment les anticiper.</p>
+        <div class="article-arrow">Lire →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- PONT VERS UNIVERS 1 -->
+<section class="soft">
+  <div class="section-inner">
+    <div class="kicker">Et vos vendeurs déjà en place ?</div>
+    <h2>Le PSV sert aussi à développer<br>les représentants <em>déjà dans votre équipe</em>.</h2>
+    <p class="section-p">La plus grande valeur du PSV se trouve souvent dans la compréhension des représentants déjà en poste — pas seulement dans l'évaluation des candidats.</p>
+    <div class="bridge">
+      <div class="bridge-text">
+        <h3>Univers Équipes de vente — Comprendre, coacher, décider</h3>
+        <p>Identifier pourquoi certains vendeurs plafonnent, structurer le coaching et prendre des décisions plus éclairées avant de remplacer un représentant.</p>
+      </div>
+      <div class="bridge-cta">
+        <a href="/equipes-de-vente/" class="btn-outline">Découvrir l'Univers Équipes →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <h2>Avant d'embaucher, assurez-vous de voir ce que l'entrevue ne vous montre pas.</h2>
+  <p>Pour 125 $, le PSV vous donne une lecture structurée des comportements commerciaux d'un candidat — les mêmes comportements qui détermineront sa performance réelle sur votre terrain.</p>
+  <div class="btns" style="justify-content:center">
+    <a href="/commande/" class="btn btn-primary">Évaluer un candidat — 125 $</a>
+    <a href="/le-vrai-cout-dune-mauvaise-embauche-en-vente/" class="btn btn-secondary">Lire : le vrai coût d'une mauvaise embauche</a>
+  </div>
+</section>
+
+<footer>© 2026 <span>PSV Global</span> · Profil de Succès en Vente® · Tous droits réservés</footer>
+</body>
+</html>

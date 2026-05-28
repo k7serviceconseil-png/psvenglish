@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.svg">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — PSV | Ressources recrutement commercial et évaluation de vendeurs</title>
+<meta name="description" content="Conseils pratiques pour recruter de meilleurs vendeurs. Stratégies d'évaluation, erreurs à éviter, outils et méthodes pour PME québécoises.">
+<link rel="canonical" href="https://psv-global.com/blog.html">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2044; --navy-mid: #1a3260;
+    --accent: #c8a96e; --accent-light: #e8c98e;
+    --white: #ffffff; --off-white: #f8f6f1;
+    --text: #1c1c1c; --text-muted: #5a6070;
+    --border: rgba(15,32,68,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--off-white); overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 5%; background: rgba(15,32,68,0.97); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(200,169,110,0.2); }
+  .nav-logo { font-family: 'Playfair Display', serif; color: var(--white); font-size: 1.4rem; font-weight: 700; letter-spacing: 0.04em; text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-cta { background: var(--accent); color: var(--navy); padding: 10px 24px; border-radius: 4px; font-weight: 600; font-size: 0.85rem; letter-spacing: 0.05em; text-decoration: none; text-transform: uppercase; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--accent-light); }
+
+  .page-hero { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 55%, #162d5a 100%); padding: 140px 5% 90px; text-align: center; position: relative; overflow: hidden; }
+  .page-hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 70vw; height: 70vw; max-width: 900px; background: radial-gradient(circle, rgba(200,169,110,0.08) 0%, transparent 70%); border-radius: 50%; }
+  .hero-badge { display: inline-block; background: rgba(200,169,110,0.15); border: 1px solid rgba(200,169,110,0.4); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; }
+  .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--white); line-height: 1.15; margin-bottom: 20px; font-weight: 900; }
+  .page-hero h1 em { color: var(--accent); font-style: normal; }
+  .page-hero p { color: rgba(255,255,255,0.7); font-size: 1.05rem; max-width: 580px; margin: 0 auto; line-height: 1.7; font-weight: 300; }
+
+  .blog-section { padding: 80px 5%; background: var(--white); }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  /* Article vedette */
+  .featured-article { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; padding: 48px; background: var(--navy); border-radius: 16px; margin-bottom: 60px; position: relative; overflow: hidden; }
+  .featured-article::before { content: 'À LA UNE'; position: absolute; top: 20px; left: 20px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.2em; color: var(--accent); background: rgba(200,169,110,0.15); border: 1px solid rgba(200,169,110,0.3); padding: 4px 10px; border-radius: 20px; }
+  .featured-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 20px; margin-top: 20px; }
+  .tag { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; }
+  .tag-recrutement { background: rgba(200,169,110,0.2); color: var(--accent); }
+  .tag-evaluation { background: rgba(26,106,74,0.2); color: #4ade80; }
+  .tag-gestion { background: rgba(59,130,246,0.2); color: #93c5fd; }
+  .tag-strategie { background: rgba(168,85,247,0.2); color: #c4b5fd; }
+  .read-time { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+  .featured-article h2 { font-family: 'Playfair Display', serif; font-size: 1.9rem; color: var(--white); line-height: 1.3; margin-bottom: 16px; }
+  .featured-article p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.7; margin-bottom: 28px; }
+  .btn-article { display: inline-block; background: var(--accent); color: var(--navy); padding: 12px 28px; border-radius: 4px; font-weight: 700; font-size: 0.88rem; text-decoration: none; letter-spacing: 0.04em; text-transform: uppercase; transition: all 0.2s; }
+  .btn-article:hover { background: var(--accent-light); }
+  .featured-visual { background: rgba(255,255,255,0.05); border: 1px solid rgba(200,169,110,0.2); border-radius: 12px; padding: 40px; text-align: center; }
+  .featured-visual .big-num { font-family: 'Playfair Display', serif; font-size: 5rem; color: var(--accent); font-weight: 900; line-height: 1; }
+  .featured-visual .big-label { color: rgba(255,255,255,0.6); font-size: 0.9rem; margin-top: 10px; line-height: 1.5; }
+
+  /* Grille articles */
+  .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+  .article-card { background: var(--off-white); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+  .article-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(15,32,68,0.1); }
+  .article-card-top { background: var(--navy); padding: 32px 28px; position: relative; }
+  .article-card-top .article-icon { font-size: 2.2rem; margin-bottom: 16px; }
+  .article-card-top h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--white); line-height: 1.35; }
+  .article-card-body { padding: 24px 28px; }
+  .article-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+  .article-card-body p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 20px; }
+  .btn-lire { display: inline-block; color: var(--accent); font-weight: 600; font-size: 0.85rem; text-decoration: none; letter-spacing: 0.04em; border-bottom: 1px solid rgba(200,169,110,0.3); padding-bottom: 2px; transition: border-color 0.2s; }
+  .btn-lire:hover { border-color: var(--accent); }
+
+  /* Section thèmes */
+  .themes-section { padding: 80px 5%; background: var(--off-white); }
+  .themes-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; margin-top: 40px; }
+  .theme-chip { background: var(--white); border: 1px solid var(--border); border-radius: 8px; padding: 20px; text-align: center; cursor: pointer; transition: all 0.2s; }
+  .theme-chip:hover { border-color: var(--accent); background: rgba(200,169,110,0.05); }
+  .theme-chip .icon { font-size: 1.6rem; margin-bottom: 10px; }
+  .theme-chip h4 { font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+  .theme-chip p { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* Newsletter */
+  .newsletter { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 80px 5%; text-align: center; }
+  .newsletter h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); margin-bottom: 12px; }
+  .newsletter h2 em { color: var(--accent); font-style: normal; }
+  .newsletter p { color: rgba(255,255,255,0.65); margin-bottom: 32px; }
+  .nl-form { display: flex; gap: 12px; max-width: 480px; margin: 0 auto; }
+  .nl-form input { flex: 1; padding: 14px 18px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.08); color: var(--white); font-size: 0.92rem; font-family: 'DM Sans', sans-serif; outline: none; }
+  .nl-form input::placeholder { color: rgba(255,255,255,0.4); }
+  .nl-form input:focus { border-color: var(--accent); }
+  .nl-form button { background: var(--accent); color: var(--navy); padding: 14px 24px; border: none; border-radius: 4px; font-weight: 700; font-size: 0.88rem; cursor: pointer; font-family: 'DM Sans', sans-serif; text-transform: uppercase; letter-spacing: 0.05em; transition: background 0.2s; }
+  .nl-form button:hover { background: var(--accent-light); }
+
+  footer { background: #080f1e; padding: 40px 5%; text-align: center; color: rgba(255,255,255,0.35); font-size: 0.82rem; }
+  footer span { color: var(--accent); }
+  footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+
+  .section-label { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); background: rgba(200,169,110,0.1); border: 1px solid rgba(200,169,110,0.25); padding: 5px 12px; border-radius: 20px; margin-bottom: 20px; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+
+  @media (max-width: 900px) {
+    .featured-article, .articles-grid, .themes-grid { grid-template-columns: 1fr; }
+    .nl-form { flex-direction: column; }
+  }
+
+  /* NAV BLANC FORCÉ */
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a { font-size: 0.88rem; font-weight: 600; color: #ffffff !important; text-decoration: none; letter-spacing: 0.02em; transition: color 0.2s; }
+  .nav-links a:hover { color: #c8a96e !important; }
+  .nav-logo { color: #ffffff !important; }
+  @media(max-width:768px){.nav-links{display:none;}}
+</style>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://psv-global.com/blog.html">
+  <meta property="og:title" content="Blog — PSV | Ressources recrutement commercial et évaluation de vendeurs">
+  <meta property="og:description" content="Conseils pratiques pour recruter de meilleurs vendeurs. Stratégies d'évaluation, erreurs à éviter, outils et méthodes pour PME québécoises.">
+  <meta property="og:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+  <meta property="og:locale" content="fr_CA">
+  <meta property="og:site_name" content="PSV — Profil de Succès en Vente">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — PSV | Ressources recrutement commercial et évaluation de vendeurs">
+  <meta name="twitter:description" content="Conseils pratiques pour recruter de meilleurs vendeurs. Stratégies d'évaluation, erreurs à éviter, outils et méthodes pour PME québécoises.">
+  <meta name="twitter:image" content="https://psv-global.com/Pierre%20Laberge%20PHD.png">
+</head>
+<body>
+
+<nav>
+  <a href="https://psv-global.com/" class="nav-logo">PSV<span> ·</span> Profil de Succès en Vente</a>
+  <div class="nav-links">
+    <a href="https://psv-global.com/a-propos.html">À propos</a>
+    <a href="https://psv-global.com/blog.html">Blog</a>
+    <a href="/pages-piliers/">Guides</a>
+    <a href="https://psv-calculateur-mai-2026.netlify.app/">Calculateur</a>
+  </div>
+  <a href="https://psv-global.com/commande.html" class="nav-cta">Évaluer un candidat</a>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="hero-badge">Ressources</div>
+  <h1>Recrutez mieux.<br><em>Décidez avec certitude.</em></h1>
+  <p>Conseils pratiques, études de cas et outils pour éviter les erreurs de recrutement en vente qui coûtent cher aux PME.</p>
+</div>
+
+<!-- BLOG -->
+<section class="blog-section">
+  <div class="container">
+
+    <!-- Article vedette -->
+    <div class="featured-article">
+      <div>
+        <div class="featured-meta">
+          <span class="tag tag-recrutement">Recrutement</span>
+          <span class="read-time">8 min de lecture</span>
+        </div>
+        <h2>Pourquoi 80 % des vendeurs ratent leurs objectifs la première année</h2>
+        <p>L'entrevue révèle le charme, pas les aptitudes. Voici ce que la science dit sur les vraies causes d'échec commercial — et comment les détecter avant d'embaucher.</p>
+        <a href="/blog/pourquoi-vendeurs-ratent-objectifs/" class="btn-article">Lire l'article →</a>
+      </div>
+      <div class="featured-visual">
+        <div class="big-num">80%</div>
+        <div class="big-label">des nouvelles recrues en vente<br>n'atteignent pas leurs objectifs<br>la première année</div>
+      </div>
+    </div>
+
+    <!-- Section label -->
+    <div class="section-label">Tous les articles</div>
+    <h2 class="section-title" style="margin-bottom:40px;">Guides et conseils pratiques</h2>
+
+    <!-- Grille articles -->
+    <div class="articles-grid">
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">💰</div>
+          <h3>Le vrai coût d'une mauvaise embauche en vente (et comment l'éviter)</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-gestion">Gestion</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Une erreur de recrutement en vente coûte 2 à 3 fois le salaire annuel du poste. Calculez votre exposition réelle et découvrez les 5 signaux d'alarme à repérer dès l'entrevue.</p>
+          <a href="/blog/cout-mauvaise-embauche-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🎯</div>
+          <h3>Les 13 compétences qui prédisent la réussite en vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-evaluation">Évaluation</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">10 min</span>
+          </div>
+          <p>Ce ne sont pas les traits de personnalité qui prédisent la performance commerciale. Ce sont des aptitudes spécifiques et mesurables. Découvrez lesquelles — et comment les évaluer.</p>
+          <a href="/blog/13-competences-reussite-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🎭</div>
+          <h3>L'entrevue vous ment : 7 biais qui faussent votre jugement</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-recrutement">Recrutement</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">7 min</span>
+          </div>
+          <p>Effet de halo, biais de similarité, première impression… Les biais cognitifs sabotent vos décisions de recrutement. Apprenez à les reconnaître et à les contourner.</p>
+          <a href="/blog/biais-entrevue-recrutement/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📊</div>
+          <h3>PSV Essentiel vs Stratégique : comment choisir la bonne formule ?</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-evaluation">Évaluation</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">4 min</span>
+          </div>
+          <p>125 $ ou 495 $ ? La réponse dépend du niveau de risque du poste, du profil du candidat et de votre processus de recrutement. Voici le guide de décision complet.</p>
+          <a href="/blog/psv-essentiel-vs-strategique/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🏆</div>
+          <h3>Étude de cas : comment une PME a évité une embauche à 85 000 $</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-strategie">Cas réel</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">5 min</span>
+          </div>
+          <p>Un candidat brillant en entrevue, un rapport PSV qui révèle des lacunes critiques en closing. Retour sur une décision qui a épargné des dizaines de milliers de dollars.</p>
+          <a href="/blog/etude-cas-pme-embauche-evitee/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🎙️</div>
+          <h3>Pourquoi les entrevues échouent souvent en vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-recrutement">Recrutement</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">7 min</span>
+          </div>
+          <p>Une bonne entrevue ne garantit pas une bonne performance. Découvrez pourquoi plusieurs compétences de vente demeurent invisibles lors d’une rencontre.</p>
+          <a href="/blog/pourquoi-entrevues-echouent-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">✨</div>
+          <h3>Pourquoi les meilleurs vendeurs ne sont pas toujours les plus charismatiques</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-evaluation">Évaluation</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Le charisme impressionne, mais il ne garantit pas la discipline, l’écoute, la prospection ni la constance commerciale.</p>
+          <a href="/blog/meilleurs-vendeurs-pas-toujours-charismatiques/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">⚠️</div>
+          <h3>Les erreurs les plus fréquentes en recrutement vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-recrutement">Recrutement</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">7 min</span>
+          </div>
+          <p>Recruter trop vite, surévaluer le CV, mal définir le rôle : ces erreurs coûtent cher aux entreprises.</p>
+          <a href="/blog/erreurs-frequentes-recrutement-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📉</div>
+          <h3>Pourquoi les vendeurs échouent après l’embauche</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-gestion">Gestion</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">7 min</span>
+          </div>
+          <p>Plusieurs échecs ne proviennent pas seulement du vendeur : onboarding, coaching, territoire et attentes jouent un rôle majeur.</p>
+          <a href="/blog/pourquoi-vendeurs-echouent-apres-embauche/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🧭</div>
+          <h3>Comment reconnaître un vrai vendeur en entrevue</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-recrutement">Recrutement</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Les vrais vendeurs se distinguent souvent par leur compréhension, leur méthode et leur discipline, pas seulement par leur discours.</p>
+          <a href="/blog/reconnaitre-vrai-vendeur-entrevue/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📞</div>
+          <h3>Pourquoi plusieurs vendeurs détestent prospecter</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-gestion">Gestion</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>La prospection expose au rejet et exige de la structure. Comprendre cette difficulté aide à mieux recruter et mieux coacher.</p>
+          <a href="/blog/pourquoi-vendeurs-detestent-prospecter/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🚩</div>
+          <h3>Les signes qu’un vendeur risque de ne pas performer</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-evaluation">Évaluation</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Certains signaux faibles apparaissent tôt : suivis irréguliers, excuses répétitives, prospection faible et manque d’écoute.</p>
+          <a href="/blog/signes-vendeur-risque-ne-pas-performer/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📄</div>
+          <h3>Pourquoi les CV sont trompeurs en vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-recrutement">Recrutement</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Les titres et les résultats passés ne racontent jamais toute l’histoire. Le contexte influence énormément la performance.</p>
+          <a href="/blog/pourquoi-cv-trompeurs-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🛡️</div>
+          <h3>Comment réduire le risque d’une mauvaise embauche</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-strategie">Stratégie</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">7 min</span>
+          </div>
+          <p>Le risque zéro n’existe pas, mais un processus plus structuré permet de réduire considérablement les erreurs de recrutement.</p>
+          <a href="/blog/reduire-risque-mauvaise-embauche-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">⭐</div>
+          <h3>Les qualités des meilleurs représentants commerciaux</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta">
+            <span class="tag tag-evaluation">Évaluation</span>
+            <span style="font-size:0.78rem;color:var(--text-muted);">6 min</span>
+          </div>
+          <p>Écoute, discipline, résilience, curiosité et professionnalisme : les qualités durables sont souvent moins visibles que le charisme.</p>
+          <a href="/blog/qualites-meilleurs-representants-commerciaux/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <!-- Articles univers 2 : gestion et performance des équipes de vente -->
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📊</div>
+          <h3>Comment évaluer une équipe de vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-gestion">Gestion</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Les résultats seuls ne suffisent pas. Il faut aussi comprendre les comportements commerciaux qui expliquent la performance réelle.</p>
+          <a href="/blog/comment-evaluer-equipe-de-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🧭</div>
+          <h3>Avant de remplacer un vendeur : quoi analyser</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-gestion">Gestion</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Avant de remplacer un représentant, il faut d’abord comprendre les causes réelles : rôle, coaching, territoire, attentes et comportements.</p>
+          <a href="/blog/avant-de-remplacer-un-vendeur-quoi-analyser/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📈</div>
+          <h3>Pourquoi certains vendeurs plafonnent</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-strategie">Performance</span><span style="font-size:0.78rem;color:var(--text-muted);">6 min</span></div>
+          <p>La stagnation vient souvent de la zone de confort, d’une prospection plus faible ou d’un coaching devenu insuffisant.</p>
+          <a href="/blog/pourquoi-certains-vendeurs-plafonnent/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🎓</div>
+          <h3>Comment identifier les besoins de formation d’une équipe de vente</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-evaluation">Formation</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Les formations sont plus efficaces lorsqu’elles répondent aux besoins réels des vendeurs plutôt qu’à une impression générale.</p>
+          <a href="/blog/identifier-besoins-formation-equipe-vente/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">⚠️</div>
+          <h3>Les erreurs les plus fréquentes des gestionnaires des ventes</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-gestion">Gestion</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Gérer seulement par les résultats ou coacher tout le monde de la même façon limite souvent la progression des équipes.</p>
+          <a href="/blog/erreurs-frequentes-gestionnaires-ventes/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🤝</div>
+          <h3>Comment mieux coacher un représentant en difficulté</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-gestion">Coaching</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Le coaching efficace ne consiste pas seulement à demander plus d’efforts, mais à comprendre ce qui limite réellement la performance.</p>
+          <a href="/blog/mieux-coacher-representant-en-difficulte/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">📞</div>
+          <h3>Pourquoi certains vendeurs évitent la prospection</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-strategie">Prospection</span><span style="font-size:0.78rem;color:var(--text-muted);">6 min</span></div>
+          <p>La prospection expose au rejet et demande de la structure. Ce n’est pas toujours un simple manque de motivation.</p>
+          <a href="/blog/pourquoi-vendeurs-evitent-prospection/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">⭐</div>
+          <h3>Comment reconnaître les forces réelles d’un vendeur</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-evaluation">Évaluation</span><span style="font-size:0.78rem;color:var(--text-muted);">6 min</span></div>
+          <p>Les résultats ne révèlent pas tout. Les forces réelles d’un vendeur se cachent souvent dans ses comportements et sa constance.</p>
+          <a href="/blog/reconnaitre-forces-reelles-vendeur/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🧩</div>
+          <h3>Les signes qu’un représentant manque de structure</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-gestion">Gestion</span><span style="font-size:0.78rem;color:var(--text-muted);">6 min</span></div>
+          <p>Un pipeline instable, des suivis imprécis et une gestion du temps difficile indiquent souvent un manque de structure.</p>
+          <a href="/blog/signes-representant-manque-structure/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+
+      <div class="article-card">
+        <div class="article-card-top">
+          <div class="article-icon">🛑</div>
+          <h3>Pourquoi les équipes de vente stagnent malgré de bons produits</h3>
+        </div>
+        <div class="article-card-body">
+          <div class="article-meta"><span class="tag tag-strategie">Performance</span><span style="font-size:0.78rem;color:var(--text-muted);">7 min</span></div>
+          <p>Même avec de bons produits, la croissance peut stagner si les comportements, le coaching et la structure commerciale ne suivent pas.</p>
+          <a href="/blog/equipes-vente-stagnent-malgre-bons-produits/" class="btn-lire">Lire l'article →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THÈMES -->
+<section class="themes-section">
+  <div class="container">
+    <div class="section-label">Explorer par thème</div>
+    <h2 class="section-title">Trouvez ce dont vous avez besoin</h2>
+    <div class="themes-grid">
+      <div class="theme-chip">
+        <div class="icon">🎯</div>
+        <h4>Recrutement</h4>
+        <p>Processus et meilleures pratiques</p>
+      </div>
+      <div class="theme-chip">
+        <div class="icon">📊</div>
+        <h4>Évaluation</h4>
+        <p>Tests et outils d'analyse</p>
+      </div>
+      <div class="theme-chip">
+        <div class="icon">💼</div>
+        <h4>Gestion des ventes</h4>
+        <p>Performance et coaching</p>
+      </div>
+      <div class="theme-chip">
+        <div class="icon">🏢</div>
+        <h4>PME québécoises</h4>
+        <p>Défis spécifiques aux PME</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PAGES PILIERS -->
+<section class="themes-section">
+  <div class="container">
+    <div class="section-label">Guides PSV</div>
+    <h2 class="section-title">Les pages piliers à consulter en premier</h2>
+    <div class="themes-grid">
+      <a class="theme-chip" href="/le-vrai-cout-dune-mauvaise-embauche-en-vente/"><div class="icon">💰</div><h4>Coût d’une mauvaise embauche</h4><p>Mesurer le risque financier</p></a>
+      <a class="theme-chip" href="/comment-recruter-un-bon-vendeur/"><div class="icon">🎯</div><h4>Recruter un bon vendeur</h4><p>Structurer la sélection</p></a>
+      <a class="theme-chip" href="/comment-evaluer-un-vendeur-avant-l-embauche/"><div class="icon">📊</div><h4>Évaluer un vendeur</h4><p>Valider les compétences</p></a>
+      <a class="theme-chip" href="/les-competences-des-meilleurs-vendeurs/"><div class="icon">⭐</div><h4>Compétences des meilleurs</h4><p>Comprendre la performance</p></a>
+    </div>
+    <div style="text-align:center;margin-top:30px;"><a href="/pages-piliers/" class="nav-cta">Voir les 5 guides</a></div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <h2>Recevez nos <em>meilleurs conseils</em></h2>
+    <p>Un article pratique par mois sur le recrutement commercial. Pas de spam.</p>
+    <div class="nl-form">
+      <input type="email" placeholder="votre@email.com">
+      <button type="button">S'abonner</button>
+    </div>
+    <p style="margin-top:12px;font-size:0.78rem;color:rgba(255,255,255,0.3);">Désabonnement en un clic. Vos données restent confidentielles.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>PSV — Profil de Succès en Vente</span>. Tous droits réservés. · <a href="https://psv-global.com/">Accueil</a> · <a href="https://psv-global.com/a-propos.html">À propos</a> · <a href="/pages-piliers/">Guides</a> · <a href="https://psv-global.com/blog.html">Blog</a></p>
+</footer>
+
+<script>
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.article-card, .theme-chip').forEach(function(el) {
+    el.style.opacity = '0'; el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+<script src="/chatbot.js"></script>
+</html>
